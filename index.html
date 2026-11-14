@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>АгроБиоСенс — оценка походки и экстерьера коров по видео</title>
+  <meta name="description" content="Сенсорная зона для молочного комплекса: камеры и нейросеть оценивают походку, промеры экстерьера, упитанность и вес каждой коровы на ходу. Разработка РГАУ-МСХА имени К.А. Тимирязева.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="assets/img/favicon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=70">
+</head>
+<body>
+  <a class="skip" href="#main">Перейти к содержанию</a>
+
+  <header class="site-header" data-header>
+    <div class="header-pill">
+      <nav class="nav" aria-label="Разделы">
+        <a href="#about">Кто мы</a>
+        <a href="#modules">Модули</a>
+        <a href="#why">Почему мы</a>
+        <a href="#formats">Форматы</a>
+      </nav>
+      <a class="logo" href="#top" aria-label="АгроБиоСенс, на главную">АГРО БИО СЕНС</a>
+      <div class="header-end">
+        <a class="btn btn-ink header-cta" href="#contact">Заказать демонстрацию</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" data-menu-toggle>
+          <span class="sr-only">Меню</span><span class="menu-bars" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Разделы" hidden>
+      <a href="#about">Кто мы</a>
+      <a href="#modules">Модули</a>
+      <a href="#why">Почему мы</a>
+      <a href="#formats">Форматы</a>
+      <a href="#faq">Вопросы</a>
+      <a class="btn btn-tag" href="#contact">Заказать демонстрацию</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <section class="hero" id="top">
+      <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/media/hero-montage.jpg" aria-hidden="true">
+        <source src="assets/media/hero-montage.mp4" type="video/mp4">
+      </video>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="wrap hero-body">
+        <div class="hero-main">
+          <ul class="hero-orgs" aria-label="Организации проекта">
+            <li class="hero-org"><img src="assets/img/logo-rgau.webp" alt="" width="324" height="128"><span>РГАУ-МСХА <span class="hero-org-more">имени К.А.&nbsp;Тимирязева</span></span></li>
+            <li class="hero-org hero-org-word"><img src="assets/img/logo-priority.webp" alt="Программа «Приоритет-2030»" width="1014" height="128"></li>
+            <li class="hero-org"><img src="assets/img/logo-mcx.webp" alt="" width="125" height="128"><span>Минсельхоз <span class="hero-org-more">России</span></span></li>
+          </ul>
+          <h1>ИИ видит хромоту раньше, чем человек</h1>
+          <div class="hero-actions">
+            <a class="btn btn-light btn-lg" href="#modules">Что умеет система</a>
+            <a class="btn btn-outline btn-lg" href="#contact">Заказать демонстрацию</a>
+          </div>
+        </div>
+      </div>
+      <aside class="hero-stat" aria-label="На каких данных учится система">
+        <p class="hero-stat-num">1&nbsp;500&nbsp;000</p>
+        <p class="hero-stat-cap">уникальных изображений в&nbsp;референтной базе</p>
+        <dl class="hero-stat-more">
+          <div><dt>14&nbsp;000</dt><dd>голов КРС</dd></div>
+          <div><dt>280+&nbsp;часов</dt><dd>видео проходов</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <aside class="press-strip" aria-label="О проекте писали">
+      <div class="wrap press-strip-row">
+        <a class="press-strip-label" href="#press">О нас писали</a>
+        <div class="press-marquee">
+          <div class="press-marquee-track">
+            <ul class="press-strip-list">
+          <li><a href="https://www.comnews.ru/digital-economy/content/245881/2026-06-17/2026-w25/1012/uchenye-timiryazevskoy-akademii-sozdali-ii-sistemu-dlya-kontrolya-zdorovya-krupnogo-rogatogo-skota" target="_blank" rel="noopener">ComNews</a></li>
+          <li><a href="https://corp.cnews.ru/news/line/2026-06-17_uchenye_i_razrabotchiki_timiryazevskoj" target="_blank" rel="noopener">CNews</a></li>
+          <li><a href="https://smotrim.ru/video/6127386" target="_blank" rel="noopener">Смотрим</a></li>
+          <li><a href="https://news.rambler.ru/tech/56799084-agroeko-i-timiryazevskaya-akademiya-ispytyvayut-otechestvennyy-ii/" target="_blank" rel="noopener">Рамблер</a></li>
+          <li><a href="https://news.mail.ru/society/67363621/" target="_blank" rel="noopener">Новости Mail</a></li>
+          <li><a href="https://vetandlife.ru/livestock/uchenye-rf-nauchili-iskusstvennyj-intellekt-spasat-korov-ot-hromoty" target="_blank" rel="noopener">Ветеринария и жизнь</a></li>
+        </ul>
+            <ul class="press-strip-list" aria-hidden="true">
+          <li><a href="https://www.comnews.ru/digital-economy/content/245881/2026-06-17/2026-w25/1012/uchenye-timiryazevskoy-akademii-sozdali-ii-sistemu-dlya-kontrolya-zdorovya-krupnogo-rogatogo-skota" target="_blank" rel="noopener" tabindex="-1">ComNews</a></li>
+          <li><a href="https://corp.cnews.ru/news/line/2026-06-17_uchenye_i_razrabotchiki_timiryazevskoj" target="_blank" rel="noopener" tabindex="-1">CNews</a></li>
+          <li><a href="https://smotrim.ru/video/6127386" target="_blank" rel="noopener" tabindex="-1">Смотрим</a></li>
+          <li><a href="https://news.rambler.ru/tech/56799084-agroeko-i-timiryazevskaya-akademiya-ispytyvayut-otechestvennyy-ii/" target="_blank" rel="noopener" tabindex="-1">Рамблер</a></li>
+          <li><a href="https://news.mail.ru/society/67363621/" target="_blank" rel="noopener" tabindex="-1">Новости Mail</a></li>
+          <li><a href="https://vetandlife.ru/livestock/uchenye-rf-nauchili-iskusstvennyj-intellekt-spasat-korov-ot-hromoty" target="_blank" rel="noopener" tabindex="-1">Ветеринария и жизнь</a></li>
+        </ul>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <h2 id="about-title" class="about-kicker">Кто мы</h2>
+        <div class="about-top">
+          <p class="about-say">АгроБиоСенс&nbsp;— видеоаналитика для молочных ферм: оценивает хромоту и&nbsp;экстерьер коров. <span class="about-by">Разработка Проектного института цифровой трансформации АПК Тимирязевской академии.</span></p>
+        <div class="fan-wrap">
+          <h3 class="sr-only">Признание</h3>
+          <div class="fan">
+            <a class="sheet sheet-ip sheet-ip-6" data-sheet="ip" href="assets/img/docs/cert-2026666742.webp" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/img/docs/cert-2026666742-thumb.webp" width="320" height="453" loading="lazy" alt=""></a>
+            <a class="sheet sheet-ip sheet-ip-5" data-sheet="ip" href="assets/img/docs/cert-2026622755.webp" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/img/docs/cert-2026622755-thumb.webp" width="320" height="453" loading="lazy" alt=""></a>
+            <a class="sheet sheet-ip sheet-ip-4" data-sheet="ip" href="assets/img/docs/cert-2025626469.webp" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/img/docs/cert-2025626469-thumb.webp" width="320" height="453" loading="lazy" alt=""></a>
+            <a class="sheet sheet-ip sheet-ip-3" data-sheet="ip" href="assets/img/docs/cert-2026622314.webp" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/img/docs/cert-2026622314-thumb.webp" width="320" height="453" loading="lazy" alt=""></a>
+            <a class="sheet sheet-ip sheet-ip-2" data-sheet="ip" href="assets/img/docs/cert-2025695364.webp" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/img/docs/cert-2025695364-thumb.webp" width="320" height="453" loading="lazy" alt=""></a>
+            <a class="sheet sheet-ip sheet-ip-1" data-sheet="ip" href="assets/img/docs/cert-2025695196.webp" target="_blank" rel="noopener" aria-label="7 свидетельств Роспатента на программы и базы данных: 4 программы для ЭВМ и 3 базы данных, 2024–2026, правообладатель РГАУ-МСХА. Открыть скан"><img src="assets/img/docs/cert-2025695196-thumb.webp" width="320" height="453" loading="lazy" alt=""></a>
+            <a class="sheet sheet-gz" data-sheet="gz" href="assets/img/docs/guangzhou-gold-2026.webp" target="_blank" rel="noopener" aria-label="Золотая медаль, 12-я Международная выставка изобретений, Гуанчжоу, Китай, август 2026. Открыть диплом"><img src="assets/img/docs/guangzhou-gold-2026-thumb.webp" width="360" height="509" loading="lazy" alt=""></a>
+            <a class="sheet sheet-gr" data-sheet="gr" href="assets/img/docs/gravitation-2026-diploma.webp" target="_blank" rel="noopener" aria-label="Победитель международной университетской премии «Гравитация» в области ИИ и больших данных, 2026. Открыть диплом"><img src="assets/img/docs/gravitation-2026-diploma-thumb.webp" width="360" height="509" loading="lazy" alt=""></a>
+            <a class="sheet sheet-vw" data-sheet="vw" href="https://veterinaryworld.org/Vol.19/October-2026/3.php" target="_blank" rel="noopener" aria-label="Научная статья в журнале Veterinary World, октябрь 2026. Открыть на сайте журнала">
+              <span class="vw-mark">Veterinary<br>World</span>
+              <span class="vw-rule"></span>
+              <span class="vw-kind">Research article</span>
+              <span class="vw-year">2026</span>
+            </a>
+          </div>
+          <div class="fan-caps" aria-hidden="true">
+            <p class="fan-cap fan-cap-default"><b>Победитель премии «Гравитация»</b> · <b>золотая медаль</b> в&nbsp;Гуанчжоу · <b>7&nbsp;свидетельств Роспатента</b> · <b>статья</b> в&nbsp;Veterinary World</p>
+            <p class="fan-cap" data-cap="ip"><span class="fan-cap-tag">Интеллектуальная собственность</span><b>7&nbsp;свидетельств Роспатента на&nbsp;программы и&nbsp;базы данных</b><span>4&nbsp;программы для ЭВМ и&nbsp;3&nbsp;базы данных, <span class="nowrap">2024–2026</span> · правообладатель РГАУ‑МСХА</span></p>
+            <p class="fan-cap" data-cap="gz"><span class="fan-cap-tag">Золотая медаль</span><b>12-я Международная выставка изобретений, Гуанчжоу, Китай</b><span>Август 2026 · за&nbsp;ИИ для ранней диагностики хромоты и&nbsp;линейной оценки экстерьера</span></p>
+            <p class="fan-cap" data-cap="gr"><span class="fan-cap-tag">Победитель</span><b>Международная университетская премия «Гравитация» в&nbsp;области ИИ и&nbsp;больших данных</b><span>2026 · номинация «Алгоритмы и&nbsp;программные решения»</span></p>
+            <p class="fan-cap" data-cap="vw"><span class="fan-cap-tag">Научная статья</span><b>Veterinary World, международный рецензируемый журнал</b><span>Октябрь 2026 · оценку хромоты нейросетью сверили с&nbsp;тремя ветврачами на&nbsp;120&nbsp;видео</span></p>
+          </div>
+        </div>
+        </div>
+        <ul class="about-points">
+          <li><span class="point-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg></span><span><b>«Приоритет&#8209;2030»</b>стратегический проект Тимирязевской академии</span></li>
+          <li><span class="point-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 19.5c.6-3.3 3-5.2 6-5.2s5.4 1.9 6 5.2"/><circle cx="17" cy="9" r="2.6"/><path d="M16.5 14.4c2.5.2 4.1 1.9 4.5 4.6"/></svg></span><span><b>50+ человек</b>исследователи и&nbsp;инженеры в&nbsp;команде проекта</span></li>
+          <li><span class="point-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.3"/><circle cx="5" cy="18" r="2.3"/><circle cx="19" cy="18" r="2.3"/><path d="M10.9 7l-4.8 8.9M13.1 7l4.8 8.9M7.3 18h9.4"/></svg></span><span><b>16 участников</b>консорциум: 7&nbsp;вузов, НИИ и&nbsp;8&nbsp;агрокомпаний</span></li>
+          <li><span class="point-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 10.5L12 4l8.5 6.5V20h-17z"/><path d="M9 20v-5.5h6V20M9 14.5l6 5.5M15 14.5L9 20"/></svg></span><span><b>Испытания на&nbsp;фермах</b>на&nbsp;действующих молочных комплексах, в&nbsp;том числе ГК&nbsp;«АГРОЭКО»</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="modules dark" id="modules" aria-labelledby="modules-title">
+      <div class="wrap">
+        <h2 id="modules-title" class="h2 modules-title">Два модуля. Вместе или по&nbsp;отдельности.</h2>
+
+        <article class="module">
+          <div class="module-media">
+            <div class="media-frame media-frame-ui">
+              <video autoplay muted loop playsinline preload="metadata" width="1200" height="940" poster="assets/media/ui-lameness.jpg?v=2" aria-label="Экран системы: профиль коровы по RFID, статус «Здорова», индекс хромоты по дням, видео прохода сбоку и спереди со скелетом">
+                <source src="assets/media/ui-lameness.mp4?v=2" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="module-text">
+            <p class="module-kicker"><span>01</span>Хромота</p>
+            <h3 class="module-head">Каждый день&nbsp;— список коров, которых стоит осмотреть</h3>
+            <p class="module-hook">Один случай хромоты&nbsp;— <b>до&nbsp;40&nbsp;тыс.&nbsp;₽</b> убытка. Система замечает изменения походки раньше, чем они видны глазу.
+              <a class="module-src" href="https://agroeco.ru/bez-rubriki/agroeko-i-timiryazevskaya-akademiya-ispytyvayut-otechestvennyj-ii-dlya-vyyavleniya-hromoty-u-korov-do-poyavleniya-pervyh-simptomov/" target="_blank" rel="noopener">Оценка ветврачей</a></p>
+            <ul class="module-gets">
+              <li><b>Список на&nbsp;осмотр</b>коровы, у&nbsp;которых походка ухудшилась</li>
+              <li><b>Профиль каждой коровы</b>индекс хромоты по&nbsp;дням, по&nbsp;бирке RFID</li>
+              <li><b>Видео прохода для&nbsp;ветврача</b>сбоку и&nbsp;спереди, со&nbsp;скелетом</li>
+            </ul>
+            <div class="module-actions">
+              <a class="btn btn-tag" href="#pick-lameness">Заказать демонстрацию</a>
+              <a class="module-more" href="technology.html#steps">Как это работает&nbsp;→</a>
+            </div>
+            <p class="status"><span class="status-dot" aria-hidden="true"></span>Опытно-производственная эксплуатация, УГТ&nbsp;6</p>
+          </div>
+        </article>
+
+        <article class="module module-flip">
+          <div class="module-media">
+            <div class="media-frame">
+              <img class="media-shot" src="assets/img/exterior-ui.webp?v=2" width="876" height="488" loading="lazy" alt="Экран оценки экстерьера: корова сбоку со скелетом, рост в крестце и в холке, глубина туловища, наклон таза">
+
+            </div>
+          </div>
+          <div class="module-text">
+            <p class="module-kicker"><span>02</span>Экстерьер</p>
+            <h3 class="module-head">Линейная оценка каждой коровы&nbsp;— без&nbsp;бонитера</h3>
+            <p class="module-hook">Промеры и&nbsp;баллы по&nbsp;методике ОТТ, пока корова просто идёт по&nbsp;проходу.</p>
+            <ul class="module-gets">
+              <li><b>7&nbsp;промеров в&nbsp;сантиметрах</b>рост, глубина туловища, таз, вымя, постановка ног</li>
+              <li><b>Баллы 1–9 по&nbsp;каждому признаку</b>и&nbsp;сводная оценка коровы</li>
+              <li><b>Отчёт по&nbsp;стаду</b>промеры и&nbsp;баллы для&nbsp;каждой коровы</li>
+            </ul>
+            <div class="module-actions">
+              <a class="btn btn-tag" href="#pick-exterior">Заказать демонстрацию</a>
+              <a class="module-more" href="technology.html#steps">Как это работает&nbsp;→</a>
+            </div>
+            <p class="status"><span class="status-dot status-dot-early" aria-hidden="true"></span>Полевые испытания, УГТ&nbsp;4. Расширяем до&nbsp;24&nbsp;признаков</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="why" id="why" aria-labelledby="why-title">
+      <div class="wrap">
+        <div class="why-head">
+          <h2 id="why-title" class="why-title">Почему мы</h2>
+          <p class="why-lead">Обучена на&nbsp;российских коровах, проверена ветврачами, отмечена на&nbsp;международном уровне.</p>
+        </div>
+        <ul class="why-cards">
+          <li class="why-card">
+            <p class="why-big">1,5&nbsp;млн</p>
+            <h3 class="why-label">изображений коров в&nbsp;базе</h3>
+            <p>14&nbsp;000 голов КРС и&nbsp;280+ часов видео проходов с&nbsp;российских ферм. На&nbsp;этих данных обучена система.</p>
+          </li>
+          <li class="why-card">
+            <p class="why-big">43</p>
+            <h3 class="why-label">точки скелета на&nbsp;каждую корову</h3>
+            <p>Нейросеть размечает всё тело, от&nbsp;головы до&nbsp;копыт, сбоку и&nbsp;сзади. Параметры определяются даже при&nbsp;частичном перекрытии тела.</p>
+          </li>
+          <li class="why-card why-card-award">
+            <p class="why-big">Золото</p>
+            <h3 class="why-label">Международная выставка изобретений, Гуанчжоу, 2026</h3>
+            <p>И&nbsp;победа в&nbsp;международной университетской премии «Гравитация» в&nbsp;области ИИ и&nbsp;больших данных.</p>
+          </li>
+          <li class="why-card">
+            <p class="why-big">3</p>
+            <h3 class="why-label">ветврача подтвердили оценку хромоты</h3>
+            <p>Результаты нейросети сверили с&nbsp;оценками ветврачей на&nbsp;120&nbsp;видео. Работа опубликована в&nbsp;международном журнале Veterinary World.</p>
+          </li>
+        </ul>
+        <ul class="why-extra">
+          <li><span class="point-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h11M10 7.5l4.5 4.5-4.5 4.5"/><path d="M18 5v14M21 5v14"/></svg></span><span>Корову не&nbsp;нужно останавливать: съёмка на&nbsp;ходу в&nbsp;обычном проходе</span></li>
+          <li><span class="point-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l18 18"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><path d="M5 12.9a10 10 0 0 1 4.2-2.5M12 9.6a10 10 0 0 1 7 3.3"/><path d="M2 9a14.5 14.5 0 0 1 4-2.6M10 5.1A14.6 14.6 0 0 1 22 9"/><circle cx="12" cy="20" r=".6" fill="currentColor"/></svg></span><span>Работает без интернета, данные стада остаются в&nbsp;хозяйстве</span></li>
+          <li><span class="point-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h7l5 5v11H7z"/><path d="M14 4v5h5"/><circle cx="11.5" cy="14.5" r="2.2"/><path d="M3.5 10a6 6 0 0 0 0 9"/></svg></span><span>Хромота и&nbsp;экстерьер в&nbsp;одном профиле коровы по&nbsp;RFID</span></li>
+          <li><span class="point-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v12H6z"/><path d="M9 7h6M9 10.5h4"/><path d="M9 15l-1.5 6L12 19l4.5 2L15 15"/></svg></span><span>7&nbsp;свидетельств Роспатента на&nbsp;программы и&nbsp;базы данных</span></li>
+          <li><span class="point-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9a8 8 0 0 1 14-3l2 2"/><path d="M20 4v4h-4"/><path d="M20 15a8 8 0 0 1-14 3l-2-2"/><path d="M4 20v-4h4"/></svg></span><span>Интеграция с&nbsp;ERP-системами хозяйства: СЕЛЭКС, 1С <span class="why-soon">в&nbsp;разработке</span></span></li>
+        </ul>
+        <p class="why-more"><a href="technology.html">Как устроена технология&nbsp;→</a></p>
+      </div>
+    </section>
+
+    <section class="formats light" id="formats" aria-labelledby="formats-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="formats-title" class="h2">С чего начать</h2>
+          <p class="lead">С&nbsp;демонстрации: покажем модуль на&nbsp;реальных проходах коров и&nbsp;подберём формат под ваше хозяйство.</p>
+        </div>
+        <ul class="picks">
+          <li class="pick" id="pick-lameness">
+            <p class="pick-kicker"><span>01</span>Хромота</p>
+            <h3 class="h3">Демо модуля «Хромота»</h3>
+            <p class="pick-who">Для ветврачей и&nbsp;руководителей фермы</p>
+            <ul class="pick-list">
+              <li>Оценка походки по&nbsp;видео прохода коровы</li>
+              <li>Скелет из&nbsp;43&nbsp;точек и&nbsp;индекс хромоты по&nbsp;каждой корове</li>
+              <li>Список коров на&nbsp;осмотр и&nbsp;профиль коровы по&nbsp;RFID</li>
+              <li>Ответы на&nbsp;вопросы ветврача</li>
+            </ul>
+            <p class="status"><span class="status-dot" aria-hidden="true"></span>Опытно-производственная эксплуатация, УГТ&nbsp;6</p>
+            <a class="btn btn-line" href="#contact" data-interest="demo" data-module="lameness">Заказать демо</a>
+          </li>
+          <li class="pick" id="pick-exterior">
+            <p class="pick-kicker"><span>02</span>Экстерьер</p>
+            <h3 class="h3">Демо модуля «Экстерьер»</h3>
+            <p class="pick-who">Для зоотехников и&nbsp;селекционеров</p>
+            <ul class="pick-list">
+              <li>Линейная оценка коровы на&nbsp;ходу, без&nbsp;бонитера</li>
+              <li>7&nbsp;промеров в&nbsp;сантиметрах и&nbsp;баллы 1–9 по&nbsp;методике ОТТ</li>
+              <li>Пример отчёта по&nbsp;стаду</li>
+              <li>Ответы на&nbsp;вопросы зоотехника</li>
+            </ul>
+            <p class="status"><span class="status-dot status-dot-early" aria-hidden="true"></span>Полевые испытания, УГТ&nbsp;4</p>
+            <a class="btn btn-line" href="#contact" data-interest="demo" data-module="exterior">Заказать демо</a>
+          </li>
+          <li class="pick pick-best" id="pick-both">
+            <p class="pick-badge">Лучшие условия</p>
+            <p class="pick-kicker"><span>01 + 02</span>Оба модуля</p>
+            <h3 class="h3">Демо «Хромота + Экстерьер»</h3>
+            <p class="pick-who">Для всей команды фермы</p>
+            <ul class="pick-list">
+              <li>Всё из&nbsp;демо обоих модулей</li>
+              <li>Здоровье и&nbsp;экстерьер коровы в&nbsp;одном профиле по&nbsp;RFID</li>
+              <li>Экран зоотехника и&nbsp;пример отчёта по&nbsp;стаду</li>
+              <li>Самые выгодные условия на&nbsp;выезд и&nbsp;комплекс под ключ</li>
+            </ul>
+            <a class="btn btn-tag" href="#contact" data-interest="demo" data-module="both">Заказать демо обоих</a>
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+    <section class="faq light" id="faq" aria-labelledby="faq-title">
+      <div class="wrap faq-grid">
+        <div class="faq-head">
+          <h2 id="faq-title" class="h2">Частые вопросы</h2>
+          <p class="lead">Коротко о&nbsp;том, что спрашивают ветврачи, зоотехники и&nbsp;руководители ферм.</p>
+          <div class="faq-ask">
+            <p>Не нашли ответ?</p>
+            <a class="btn btn-line" href="#contact" data-interest="tech">Задать вопрос команде</a>
+          </div>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Какой ферме подойдёт система?</summary>
+            <div class="faq-a">
+              <p>Молочным комплексам с&nbsp;беспривязным содержанием, где коровы по&nbsp;одной проходят через проход, например на&nbsp;выходе из&nbsp;доильного зала. Постоянную сенсорную зону выгоднее всего ставить в&nbsp;хозяйствах от&nbsp;500&nbsp;коров. Если оборудование на&nbsp;ферме пока не&nbsp;нужно, начните с&nbsp;выезда специалистов: оценим стадо мобильным комплексом.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Нужно ли перестраивать проход или останавливать коров?</summary>
+            <div class="faq-a">
+              <p>Нет. Коровы идут обычным маршрутом, система снимает их на&nbsp;ходу. Конструкцию с&nbsp;камерами, RFID‑считывателем и&nbsp;светом подбираем под ваш проход после обследования площадки.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Как система узнаёт, какая это корова?</summary>
+            <div class="faq-a">
+              <p>По&nbsp;электронной бирке RFID. Каждый проход и&nbsp;каждая оценка попадают в&nbsp;профиль коровы под её номером, так что видно, как меняются походка и&nbsp;промеры со&nbsp;временем.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Нужен ли интернет? Куда уходят видео и&nbsp;данные стада?</summary>
+            <div class="faq-a">
+              <p>Интернет не&nbsp;нужен. Нейросеть работает на&nbsp;локальном сервере в&nbsp;хозяйстве, видео и&nbsp;данные стада остаются у&nbsp;вас и&nbsp;не&nbsp;передаются за&nbsp;пределы фермы.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Насколько можно доверять оценке хромоты?</summary>
+            <div class="faq-a">
+              <p>Оценки нейросети сверили с&nbsp;оценками трёх ветврачей на&nbsp;120&nbsp;видео проходов, ветврачи оценивали вслепую. Результаты опубликованы в&nbsp;рецензируемом журнале <a href="https://veterinaryworld.org/Vol.19/October-2026/3.php" target="_blank" rel="noopener">Veterinary World</a>. Модуль работает в&nbsp;опытно-производственной эксплуатации на&nbsp;молочных комплексах, в&nbsp;том числе ГК&nbsp;«АГРОЭКО».</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Система заменит ветврача или бонитера?</summary>
+            <div class="faq-a">
+              <p>Ветврача&nbsp;— нет. Система каждый день подсказывает, каких коров осмотреть в&nbsp;первую очередь, и&nbsp;показывает видео прохода, а&nbsp;диагноз и&nbsp;лечение остаются за&nbsp;ветврачом.</p>
+              <p>Модуль «Экстерьер» берёт на&nbsp;себя рутинные промеры: считает их в&nbsp;сантиметрах и&nbsp;ставит баллы 1–9 по&nbsp;отраслевой методике ОТТ. Сейчас он на&nbsp;полевых испытаниях.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>С&nbsp;какими породами работает?</summary>
+            <div class="faq-a">
+              <p>Нейросети обучены на&nbsp;голштинских коровах. Если в&nbsp;вашем стаде другая порода, расскажите о&nbsp;нём в&nbsp;заявке: проверим систему на&nbsp;ваших животных во&nbsp;время демонстрации или выезда.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Как проходит демонстрация?</summary>
+            <div class="faq-a">
+              <p>Показываем выбранный модуль на&nbsp;реальных проходах коров: скелет, оценку и&nbsp;профиль коровы, пример отчёта по&nbsp;стаду. Отвечаем на&nbsp;вопросы ветврача и&nbsp;зоотехника и&nbsp;подбираем формат под ваше хозяйство. Удобные дату и&nbsp;формат согласуем после заявки.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Сколько это стоит?</summary>
+            <div class="faq-a">
+              <p>Зависит от&nbsp;формата. Выезд специалистов оплачивается за&nbsp;голову или за&nbsp;выезд. Стоимость комплекса под ключ считаем под ваше стадо и&nbsp;условия содержания. Оставьте заявку с&nbsp;поголовьем&nbsp;— пришлём коммерческое предложение.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Что входит в&nbsp;комплекс под ключ?</summary>
+            <div class="faq-a">
+              <p>Конструкция прохода, камеры, RFID‑считыватель, свет и&nbsp;весы, локальный сервер, экран зоотехника с&nbsp;карточкой каждой коровы. Мы&nbsp;делаем монтаж, калибровку, пусконаладку и&nbsp;обучаем персонал, а&nbsp;сервис и&nbsp;обновления моделей идут по&nbsp;годовому договору.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Можно ли выгружать данные в&nbsp;СЕЛЭКС или&nbsp;1С?</summary>
+            <div class="faq-a">
+              <p>Интеграция с&nbsp;СЕЛЭКС и&nbsp;1С сейчас в&nbsp;разработке. Пока результаты доступны в&nbsp;профиле каждой коровы и&nbsp;в&nbsp;отчёте по&nbsp;стаду.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Кто разрабатывает систему?</summary>
+            <div class="faq-a">
+              <p>Проектный институт цифровой трансформации АПК Тимирязевской академии (РГАУ‑МСХА имени К.А.&nbsp;Тимирязева) в&nbsp;рамках программы «Приоритет‑2030». Права на&nbsp;программы и&nbsp;базы данных принадлежат университету и&nbsp;подтверждены 7&nbsp;свидетельствами Роспатента.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust" id="press" aria-labelledby="trust-title">
+      <div class="wrap">
+
+        <h2 id="trust-title" class="trust-title">О проекте пишут</h2>
+        <ul class="press">
+          <li class="press-card press-card-lead">
+            <a href="https://smotrim.ru/video/6127386" target="_blank" rel="noopener">
+              <span class="press-media"><img src="assets/img/press/smotrim.webp" alt="" width="1200" height="750" loading="lazy"><span class="press-play" aria-hidden="true">Видео</span></span>
+              <span class="press-meta">«Специальный репортаж», Смотрим · 8 октября 2026</span>
+              <span class="press-head">Остался на хозяйстве. Как искусственный интеллект меняет агропром России</span>
+            </a>
+          </li>
+          <li class="press-card">
+            <a href="https://agroeco.ru/bez-rubriki/agroeko-i-timiryazevskaya-akademiya-ispytyvayut-otechestvennyj-ii-dlya-vyyavleniya-hromoty-u-korov-do-poyavleniya-pervyh-simptomov/" target="_blank" rel="noopener">
+              <span class="press-media"><img src="assets/img/press/agroeco.webp" alt="" width="800" height="500" loading="lazy"></span>
+              <span class="press-meta">ГК «АГРОЭКО» · 22 июля 2026</span>
+              <span class="press-head">АГРОЭКО и Тимирязевская академия испытывают отечественный ИИ для выявления хромоты у коров</span>
+            </a>
+          </li>
+          <li class="press-card">
+            <a href="https://runews24.ru/agro/09/10/2026/ajtishniki-i-zootexniki-vmeste-kak-studentyi-timiryazevki-uchat-ii-oczenivat-korov" target="_blank" rel="noopener">
+              <span class="press-media"><img src="assets/img/press/runews24.webp" alt="" width="800" height="500" loading="lazy"></span>
+              <span class="press-meta">RuNews24 · 9 октября 2026</span>
+              <span class="press-head">Айтишники и зоотехники вместе: как студенты Тимирязевки учат ИИ оценивать коров</span>
+            </a>
+          </li>
+          <li class="press-card">
+            <a href="https://vetandlife.ru/livestock/uchenye-rf-nauchili-iskusstvennyj-intellekt-spasat-korov-ot-hromoty" target="_blank" rel="noopener">
+              <span class="press-media"><img src="assets/img/press/vetandlife.webp" alt="" width="800" height="500" loading="lazy"></span>
+              <span class="press-meta">«Ветеринария и жизнь» · 16 сентября 2026</span>
+              <span class="press-head">Учёные РФ научили искусственный интеллект спасать коров от хромоты</span>
+            </a>
+          </li>
+          <li class="press-card">
+            <a href="https://www.comnews.ru/digital-economy/content/245881/2026-06-17/2026-w25/1012/uchenye-timiryazevskoy-akademii-sozdali-ii-sistemu-dlya-kontrolya-zdorovya-krupnogo-rogatogo-skota" target="_blank" rel="noopener">
+              <span class="press-media"><img src="assets/img/press/comnews.webp" alt="" width="800" height="500" loading="lazy"></span>
+              <span class="press-meta">ComNews · 17 июня 2026</span>
+              <span class="press-head">Учёные Тимирязевской академии создали ИИ-систему для контроля здоровья крупного рогатого скота</span>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+  </main>
+
+  <dialog class="modal" id="contact" aria-labelledby="contact-title" data-modal>
+    <div class="modal-box">
+      <button class="modal-close" type="button" data-modal-close aria-label="Закрыть">×</button>
+      <h2 id="contact-title" class="modal-title">Оставить заявку</h2>
+      <p class="modal-lead">Ответим в&nbsp;течение двух рабочих дней и&nbsp;предложим формат.</p>
+      <div class="modal-team">
+        <span class="modal-faces" aria-hidden="true">
+          <img src="assets/img/team-kopersak.webp" width="40" height="40" alt="" loading="lazy" decoding="async">
+        </span>
+        <p>Заявку получит Анастасия Коперсак, руководитель проекта</p>
+      </div>
+      <form class="form" data-form novalidate>
+        <fieldset class="interest">
+          <legend>Что вас интересует</legend>
+          <label><input type="radio" name="interest" value="Демонстрация технологии" checked data-interest-input="demo"><span>Демонстрация</span></label>
+          <label><input type="radio" name="interest" value="Выезд специалистов" data-interest-input="visit"><span>Выезд специалистов</span></label>
+          <label><input type="radio" name="interest" value="Комплекс под ключ" data-interest-input="turnkey"><span>Комплекс под ключ</span></label>
+          <label><input type="radio" name="interest" value="Технический вопрос" data-interest-input="tech"><span>Технический вопрос</span></label>
+          <label><input type="radio" name="interest" value="Видеоконференция (ВКС)" data-interest-input="vks"><span>Запросить ВКС</span></label>
+          <label><input type="radio" name="interest" value="Коммерческое предложение" data-interest-input="kp"><span>Запросить КП</span></label>
+        </fieldset>
+        <fieldset class="interest">
+          <legend>Модуль</legend>
+          <label><input type="radio" name="module" value="Хромота" data-module-input="lameness"><span>Хромота</span></label>
+          <label><input type="radio" name="module" value="Экстерьер" data-module-input="exterior"><span>Экстерьер</span></label>
+          <label><input type="radio" name="module" value="Оба модуля" checked data-module-input="both"><span>Оба модуля</span></label>
+        </fieldset>
+        <div class="field-pair">
+          <div class="field">
+            <label for="f-name">Имя</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required>
+            <p class="field-error" id="f-name-err" hidden>Напишите, как к вам обращаться</p>
+          </div>
+          <div class="field">
+            <label for="f-contact">Телефон или e-mail</label>
+            <input id="f-contact" name="contact" type="text" autocomplete="email" required>
+            <p class="field-error" id="f-contact-err" hidden>Оставьте телефон или e-mail, чтобы мы могли ответить</p>
+          </div>
+        </div>
+        <div class="field-pair">
+          <div class="field">
+            <label for="f-org">Хозяйство и регион</label>
+            <input id="f-org" name="org" type="text" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="f-herd">Поголовье коров</label>
+            <select id="f-herd" name="herd">
+              <option value="">Не указано</option>
+              <option>до 500</option>
+              <option>500–1 000</option>
+              <option>1 000–3 000</option>
+              <option>больше 3 000</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-msg">Вопрос или комментарий</label>
+          <textarea id="f-msg" name="message" rows="3"></textarea>
+        </div>
+        <label class="consent">
+          <input type="checkbox" name="consent" required>
+          <span>Согласен на обработку персональных данных для ответа на заявку по&nbsp;152‑ФЗ</span>
+        </label>
+        <p class="field-error" id="f-consent-err" hidden>Без согласия мы не сможем обработать заявку</p>
+        <button class="btn btn-tag" type="submit">Отправить заявку</button>
+        <p class="form-done" data-form-done hidden role="status">Открыли письмо с заявкой в вашей почтовой программе — осталось нажать «Отправить». Если письмо не открылось, напишите на top_apk@rgau-msha.ru.</p>
+      </form>
+    </div>
+  </dialog>
+
+  <footer class="site-footer" data-cowfoot>
+    <div class="wrap">
+      <nav class="footer-cols" aria-label="Ссылки в подвале">
+        <div class="footer-col">
+          <p class="footer-col-title">Модули</p>
+          <ul>
+            <li><a href="#pick-lameness">Ранняя хромота</a></li>
+            <li><a href="#pick-exterior">Оценка экстерьера</a></li>
+            <li><a href="#pick-both">Оба модуля</a></li>
+            <li><a href="technology.html">Как работает система</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">О проекте</p>
+          <ul>
+            <li><a href="#about">Кто мы</a></li>
+            <li><a href="#why">Почему мы</a></li>
+            <li><a href="#formats">Форматы работы</a></li>
+            <li><a href="#faq">Частые вопросы</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">Публикации</p>
+          <ul>
+            <li><a href="https://veterinaryworld.org/Vol.19/October-2026/3.php" target="_blank" rel="noopener">Veterinary World, 2026</a></li>
+            <li><a href="https://www.comnews.ru/digital-economy/content/245881/2026-06-17/2026-w25/1012/uchenye-timiryazevskoy-akademii-sozdali-ii-sistemu-dlya-kontrolya-zdorovya-krupnogo-rogatogo-skota" target="_blank" rel="noopener">ComNews</a></li>
+            <li><a href="https://smotrim.ru/video/6127386" target="_blank" rel="noopener">Смотрим</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">Связаться</p>
+          <ul>
+            <li><a href="#contact">Заказать демонстрацию</a></li>
+            <li><a href="mailto:top_apk@rgau-msha.ru">top_apk@rgau-msha.ru</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="cf-stage" data-cf-stage>
+        <div class="cf-cta" data-cf-cta>
+          <p class="cf-kicker">Так работает сенсорная зона</p>
+          <p class="cf-title">Покажем систему на&nbsp;ваших коровах</p>
+          <div class="cf-actions">
+            <a class="btn btn-tag btn-lg" href="#contact">Заказать демонстрацию</a>
+          </div>
+        </div>
+
+        <svg class="cf-gate" data-cf-gate viewBox="0 0 120 200" aria-hidden="true">
+          <path class="cf-cone" d="M60 26 L10 199 L110 199 Z" />
+          <path class="cf-line" d="M12 199 V22 H108 V199" />
+          <rect class="cf-line cf-fill" x="47" y="8" width="26" height="14" rx="3" />
+          <circle class="cf-line" cx="60" cy="15" r="3.5" />
+          <circle class="cf-rec" cx="68.5" cy="11.5" r="1.4" />
+        </svg>
+        <div class="cf-beam" data-cf-beam aria-hidden="true"></div>
+
+        <div class="cf-cow" data-cf-cow aria-hidden="true">
+          <svg class="cf-cow-svg" viewBox="40 190 1380 742" aria-hidden="true">
+            <defs><clipPath id="cf-clip"><rect data-cf-clip x="2000" y="0" width="2000" height="1200" /></clipPath></defs>
+            <g data-cf-body>
+              <g class="cf-leg cf-far" data-leg="0" data-off="1" data-px="250" data-py="593"><path class="cf-hide" d="M199 558 199 637 207 623 208 624 207 638 199 662 200 670 219 699 224 709 241 731 263 765 283 807 286 817 288 836 295 842 302 841 304 842 305 851 302 858 303 869 321 889 327 892 337 895 357 898 378 899 383 897 386 894 386 891 374 868 374 864 371 862 369 855 357 834 340 811 332 793 320 774 299 733 289 705 286 689 286 678 291 652 301 624 302 625 302 640 306 649 319 649 322 645 323 636 325 634 327 636 333 636 337 632 340 623 343 622 342 616 345 612 354 607 357 608 361 606 363 602 366 600 367 601 374 600 386 606 386 558Z" /></g>
+<g class="cf-leg cf-far" data-leg="1" data-off="0" data-px="658" data-py="566"><path class="cf-hide" d="M732 558 516 558 516 634 534 634 564 631 575 628 581 628 602 623 607 623 619 619 625 621 630 617 635 618 640 621 640 624 625 655 620 671 607 701 603 713 603 717 601 720 598 735 591 750 562 791 544 812 537 823 527 832 523 838 523 843 528 850 532 851 532 853 529 859 529 862 518 878 516 884 516 892 521 906 530 913 537 916 547 918 562 919 563 921 589 920 598 917 598 914 580 885 580 878 576 869 576 861 578 852 585 842 600 808 614 784 627 765 639 753 652 746 661 738 680 712 703 677 719 659 732 648Z" /></g>
+
+              <path class="cf-tailline cf-tail" d="M74 262 C64 330 78 420 86 500 C90 545 92 580 96 612" />
+              <path class="cf-hide" d="M49 322 49 349 52 366 62 403 66 452 71 488 71 524 69 542 70 546 68 551 66 567 67 584 70 587 71 599 74 602 77 613 83 623 86 625 88 631 92 635 93 640 88 647 193 647 207 623 208 631 204 647 293 647 301 624 302 625 302 640 304 646 309 651 316 651 322 645 323 636 325 634 327 636 333 636 337 632 340 623 343 622 342 617 343 614 354 607 357 608 361 606 363 602 366 600 367 601 374 600 380 602 411 618 412 621 415 620 416 622 431 629 439 631 471 629 476 631 490 632 498 634 534 634 570 630 575 628 581 628 602 623 607 623 619 619 625 621 628 618 632 617 639 620 640 624 629 647 733 647 754 630 813 647 932 647 931 629 938 622 975 603 1001 584 1040 547 1050 534 1071 512 1087 499 1105 487 1114 483 1117 480 1153 462 1164 459 1166 461 1172 460 1182 461 1197 466 1227 481 1230 481 1238 485 1252 489 1266 491 1282 491 1308 488 1316 490 1317 493 1321 492 1341 503 1356 503 1363 501 1375 495 1379 491 1382 491 1391 486 1397 480 1404 467 1407 455 1405 446 1401 439 1380 419 1332 353 1325 341 1320 336 1313 317 1312 310 1307 299 1298 286 1278 263 1277 247 1279 246 1282 240 1281 237 1283 234 1282 229 1284 228 1284 226 1273 223 1270 220 1270 218 1265 219 1261 217 1262 213 1258 214 1255 213 1254 210 1250 208 1241 206 1234 206 1230 208 1228 205 1224 205 1220 208 1219 214 1217 211 1207 210 1206 213 1208 214 1207 218 1204 217 1193 220 1191 226 1186 225 1183 227 1182 229 1183 234 1180 236 1177 236 1173 243 1168 244 1168 251 1162 257 1142 262 1121 265 1061 266 1060 265 1038 265 1002 261 991 261 974 258 894 231 870 226 864 223 860 223 843 218 826 216 777 217 776 218 771 217 770 218 739 219 731 221 716 221 703 223 640 224 639 225 620 225 619 226 564 225 515 230 459 230 458 229 439 230 438 229 424 229 423 228 392 226 358 219 313 206 285 205 272 207 268 209 252 212 249 214 235 215 214 220 207 220 203 222 146 228 119 234 108 240 105 240 86 250 79 256 78 259 73 264 64 278 56 295 51 310Z" />
+              
+              
+              <g class="cf-leg" data-leg="2" data-off="0" data-px="248" data-py="491"><path class="cf-hide" d="M80 558 80 617 83 623 86 625 88 631 91 633 93 639 82 655 80 667 85 688 90 733 97 763 106 820 109 855 106 861 106 868 109 872 109 875 112 878 119 879 123 877 126 880 128 884 127 908 133 918 139 923 148 925 179 925 180 924 200 924 211 922 214 919 211 912 189 886 186 880 180 875 174 865 168 859 162 848 160 838 158 835 147 799 144 776 144 758 146 742 152 722 168 690 207 623 208 624 207 638 203 649 214 649 214 558Z" /></g>
+<g class="cf-leg" data-leg="3" data-off="1" data-px="807" data-py="592"><path class="cf-hide" d="M817 558 817 648 831 652 835 663 850 693 858 706 869 731 874 747 878 753 892 766 904 786 917 812 929 846 934 870 936 873 936 883 939 892 943 894 948 894 952 891 955 892 958 895 960 900 959 910 965 923 978 928 1024 928 1025 927 1036 927 1045 924 1045 918 1005 876 1002 875 985 858 958 805 951 785 951 774 954 765 954 755 955 754 954 730 950 717 950 713 938 678 938 673 935 664 931 642 931 629 938 622 961 611 981 599 1001 584 1029 558Z" /></g>
+              <g class="cf-bones" clip-path="url(#cf-clip)"><line class="cf-l cf-g" x1="100" y1="245" x2="206" y2="217" /><line class="cf-l cf-g" x1="206" y1="217" x2="297" y2="200" /><line class="cf-l cf-g" x1="297" y1="200" x2="446" y2="226" /><line class="cf-l cf-g" x1="446" y1="226" x2="600" y2="223" /><line class="cf-l cf-g" x1="600" y1="223" x2="814" y2="208" /><line class="cf-l cf-g" x1="814" y1="208" x2="1000" y2="263" /><line class="cf-l cf-g" x1="1000" y1="263" x2="1210" y2="270" /><line class="cf-l cf-g" x1="1210" y1="270" x2="1293" y2="345" /><line class="cf-l cf-g" x1="1293" y1="345" x2="1373" y2="475" /><line class="cf-l cf-g" x1="1210" y1="270" x2="1373" y2="475" /><line class="cf-l cf-g" x1="297" y1="200" x2="657" y2="604" /><line class="cf-l cf-g" x1="250" y1="593" x2="449" y2="615" /><line class="cf-l cf-g" x1="449" y1="615" x2="657" y2="604" /><line class="cf-l cf-g" x1="657" y1="604" x2="750" y2="596" /><line class="cf-l cf-g" x1="750" y1="596" x2="807" y2="592" /><line class="cf-l cf-g" x1="807" y1="592" x2="892" y2="650" /><line class="cf-l cf-g" x1="814" y1="208" x2="908" y2="472" /><line class="cf-l cf-g" x1="814" y1="208" x2="974" y2="492" /><line class="cf-l cf-g" x1="908" y1="472" x2="892" y2="650" /><line class="cf-l cf-g" x1="974" y1="492" x2="892" y2="650" /><line class="cf-l cf-g" x1="657" y1="604" x2="908" y2="472" /><line class="cf-l cf-g" x1="657" y1="604" x2="974" y2="492" /><line class="cf-l cf-b" x1="100" y1="245" x2="153" y2="270" /><line class="cf-l cf-b" x1="153" y1="270" x2="248" y2="491" /><line class="cf-l cf-b" x1="974" y1="492" x2="807" y2="592" /><line class="cf-l cf-b" x1="974" y1="492" x2="903" y2="586" /><line class="cf-l cf-b" x1="903" y1="586" x2="892" y2="650" /><line class="cf-l cf-o" x1="313" y1="210" x2="173" y2="263" /><line class="cf-l cf-o" x1="173" y1="263" x2="325" y2="500" /><line class="cf-l cf-o" x1="325" y1="500" x2="250" y2="593" /><line class="cf-l cf-o" x1="908" y1="472" x2="658" y2="566" /><line class="cf-l cf-o" x1="658" y1="566" x2="657" y2="604" /><line class="cf-l cf-o" x1="908" y1="472" x2="750" y2="596" /><line class="cf-l cf-o" x1="206" y1="217" x2="173" y2="263" /></g>
+              <g class="cf-legsk" data-legsk="0"><line class="cf-l cf-o" x1="250" y1="593" x2="206" y2="664" /><line class="cf-l cf-o" x1="206" y1="664" x2="301" y2="810" /><line class="cf-l cf-o" x1="301" y1="810" x2="331" y2="864" /><circle class="cf-pt cf-o" cx="206" cy="664" r="11" /><circle class="cf-pt cf-o" cx="301" cy="810" r="11" /><circle class="cf-pt cf-o" cx="331" cy="864" r="11" /></g><g class="cf-legsk" data-legsk="1"><line class="cf-l cf-o" x1="658" y1="566" x2="644" y2="721" /><line class="cf-l cf-o" x1="644" y1="721" x2="569" y2="830" /><line class="cf-l cf-o" x1="569" y1="830" x2="565" y2="889" /><circle class="cf-pt cf-o" cx="644" cy="721" r="11" /><circle class="cf-pt cf-o" cx="569" cy="830" r="11" /><circle class="cf-pt cf-o" cx="565" cy="889" r="11" /></g><g class="cf-legsk" data-legsk="2"><line class="cf-l cf-b" x1="248" y1="491" x2="92" y2="665" /><line class="cf-l cf-b" x1="92" y1="665" x2="142" y2="841" /><line class="cf-l cf-b" x1="142" y1="841" x2="177" y2="900" /><circle class="cf-pt cf-b" cx="92" cy="665" r="11" /><circle class="cf-pt cf-b" cx="142" cy="841" r="11" /><circle class="cf-pt cf-b" cx="177" cy="900" r="11" /></g><g class="cf-legsk" data-legsk="3"><line class="cf-l cf-b" x1="807" y1="592" x2="907" y2="733" /><line class="cf-l cf-b" x1="907" y1="733" x2="956" y2="862" /><line class="cf-l cf-b" x1="956" y1="862" x2="1003" y2="902" /><circle class="cf-pt cf-b" cx="907" cy="733" r="11" /><circle class="cf-pt cf-b" cx="956" cy="862" r="11" /><circle class="cf-pt cf-b" cx="1003" cy="902" r="11" /></g>
+              <circle class="cf-pt cf-g" data-lx="100" cx="100" cy="245" r="11" /><circle class="cf-pt cf-g" data-lx="206" cx="206" cy="217" r="11" /><circle class="cf-pt cf-g" data-lx="297" cx="297" cy="200" r="11" /><circle class="cf-pt cf-g" data-lx="446" cx="446" cy="226" r="11" /><circle class="cf-pt cf-g" data-lx="600" cx="600" cy="223" r="11" /><circle class="cf-pt cf-g" data-lx="814" cx="814" cy="208" r="11" /><circle class="cf-pt cf-g" data-lx="1000" cx="1000" cy="263" r="11" /><circle class="cf-pt cf-g" data-lx="1210" cx="1210" cy="270" r="11" /><circle class="cf-pt cf-g" data-lx="1373" cx="1373" cy="475" r="11" /><circle class="cf-pt cf-g" data-lx="250" cx="250" cy="593" r="11" /><circle class="cf-pt cf-g" data-lx="449" cx="449" cy="615" r="11" /><circle class="cf-pt cf-g" data-lx="657" cx="657" cy="604" r="11" /><circle class="cf-pt cf-g" data-lx="892" cx="892" cy="650" r="11" /><circle class="cf-pt cf-o" data-lx="1293" cx="1293" cy="345" r="11" /><circle class="cf-pt cf-b" data-lx="153" cx="153" cy="270" r="11" /><circle class="cf-pt cf-b" data-lx="248" cx="248" cy="491" r="11" /><circle class="cf-pt cf-b" data-lx="974" cx="974" cy="492" r="11" /><circle class="cf-pt cf-b" data-lx="903" cx="903" cy="586" r="11" /><circle class="cf-pt cf-b" data-lx="807" cx="807" cy="592" r="11" /><circle class="cf-pt cf-o" data-lx="173" cx="173" cy="263" r="11" /><circle class="cf-pt cf-o" data-lx="313" cx="313" cy="210" r="11" /><circle class="cf-pt cf-o" data-lx="325" cx="325" cy="500" r="11" /><circle class="cf-pt cf-o" data-lx="908" cx="908" cy="472" r="11" /><circle class="cf-pt cf-o" data-lx="658" cx="658" cy="566" r="11" /><circle class="cf-pt cf-o" data-lx="750" cx="750" cy="596" r="11" />
+              <g class="cf-measure">
+                <rect class="cf-box" x="49" y="200" width="1358" height="728" />
+                <path class="cf-dim" d="M790 208 V928 M770 208 H810 M770 928 H810" />
+                <path class="cf-dim" d="M974 492 L153 270" />
+              </g>
+            </g>
+          </svg>
+          <p class="cf-chip cf-chip-tag" style="left:0.7%;top:1.3%">Пример разметки</p>
+          <p class="cf-chip cf-chip-top" style="left:54.3%;top:1.3%">Высота в холке <b>147 см</b></p>
+          <p class="cf-chip cf-chip-mid cf-chip-opt" style="left:37.9%;top:25.7%">Косая длина <b>166 см</b></p>
+          <p class="cf-chip cf-chip-top cf-chip-opt" style="left:84.8%;top:9.7%">Экстерьер <b>7,4 / 9</b></p>
+          <p class="cf-chip cf-chip-side" style="left:73.2%;top:79.5%">Походка <b>норма</b></p>
+        </div>
+
+        <div class="cf-ground" aria-hidden="true"></div>
+      </div>
+
+      <svg class="cf-word" viewBox="0 0 1000 128" role="img" aria-label="АгроБиоСенс">
+        <text x="500" y="116" text-anchor="middle" textLength="996" lengthAdjust="spacingAndGlyphs">АГРО БИО СЕНС</text>
+      </svg>
+
+      <div class="footer-row">
+        <p>АгроБиоСенс — разработка РГАУ-МСХА имени К.А. Тимирязева, Проектный институт цифровой трансформации АПК. Правообладатель — РГАУ-МСХА имени К.А. Тимирязева.</p>
+        <p><a href="mailto:top_apk@rgau-msha.ru">top_apk@rgau-msha.ru</a> · © 2026 <a href="#">Политика обработки персональных данных</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js?v=9" defer></script>
+</body>
+</html>

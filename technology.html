@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Технология — АгроБиоСенс</title>
+  <meta name="description" content="Как устроен комплекс АгроБиоСенс: камеры и RFID в проходе, нейросеть ставит точки скелета прямо в хозяйстве, балл походки и экстерьера, профиль коровы для зоотехника.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="assets/img/favicon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=70">
+</head>
+<body>
+  <a class="skip" href="#main">Перейти к содержанию</a>
+
+  <header class="site-header" data-header>
+    <div class="header-pill">
+      <nav class="nav" aria-label="Разделы">
+        <a href="index.html#about">Кто мы</a>
+        <a href="index.html#modules">Модули</a>
+        <a href="technology.html" aria-current="page">Как работает</a>
+        <a href="index.html#formats">Форматы</a>
+      </nav>
+      <a class="logo" href="index.html#top" aria-label="АгроБиоСенс, на главную">АГРО БИО СЕНС</a>
+      <div class="header-end">
+        <a class="btn btn-ink header-cta" href="index.html#contact">Заказать демонстрацию</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" data-menu-toggle>
+          <span class="sr-only">Меню</span><span class="menu-bars" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Разделы" hidden>
+      <a href="index.html#about">Кто мы</a>
+      <a href="index.html#modules">Модули</a>
+      <a href="technology.html" aria-current="page">Как работает</a>
+      <a href="index.html#formats">Форматы</a>
+      <a class="btn btn-tag" href="index.html#contact">Заказать демонстрацию</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <section class="tech-intro dark">
+      <div class="wrap">
+        <p class="tech-kicker"><a href="index.html">Главная</a> / Технология</p>
+        <h1 class="tech-title">Как работает АгроБиоСенс</h1>
+        <p class="lead">Камеры в&nbsp;проходе, нейросеть на&nbsp;сервере в&nbsp;хозяйстве и&nbsp;профиль каждой коровы для&nbsp;зоотехника. Ниже по&nbsp;шагам, что происходит, пока корова идёт по&nbsp;проходу.</p>
+      </div>
+    </section>
+
+    <section class="how how-full" id="steps" aria-labelledby="how-title">
+      <div class="wrap">
+        <h2 id="how-title" class="how-title">От&nbsp;прохода до&nbsp;профиля коровы</h2>
+
+        <div class="how-track" data-how>
+          <div class="how-counter" aria-hidden="true">
+            <span class="how-num"><span data-how-num>01</span></span>
+            <span class="how-bars"><i class="is-on" data-how-bar></i><i data-how-bar></i><i data-how-bar></i><i data-how-bar></i></span>
+          </div>
+
+          <ol class="how-cards">
+            <li class="how-card" data-how-step="1">
+              <div class="how-text">
+                <span class="how-no" aria-hidden="true">01</span>
+                <h3 class="how-label">Съёмка</h3>
+                <p class="how-say">Камеры в&nbsp;проходе снимают каждую корову на&nbsp;ходу, а&nbsp;RFID‑считыватель узнаёт её по&nbsp;бирке. Останавливать животное не&nbsp;нужно.</p>
+              </div>
+              <figure class="how-media how-media-render">
+                <img src="assets/img/how-capture.webp" width="1098" height="830" loading="lazy"
+                     alt="Рендер модуля хромоты: сужающийся коридор с рамами, на рамах камеры, RFID-считыватели, лидар и освещение, сбоку стойка управления">
+                <figcaption class="how-legend">
+                  <span><b>1</b>стойка управления</span>
+                  <span><b>3</b>RFID</span>
+                  <span><b>4</b>камеры</span>
+                  <span><b>5</b>лидар</span>
+                  <span><b>6</b>свет</span>
+                </figcaption>
+              </figure>
+            </li>
+
+            <li class="how-card" data-how-step="2">
+              <div class="how-text">
+                <span class="how-no" aria-hidden="true">02</span>
+                <h3 class="how-label">Анализ</h3>
+                <p class="how-say">Нейросеть ставит 43&nbsp;точки скелета и&nbsp;считает углы суставов, симметрию шага и&nbsp;промеры. Прямо в&nbsp;хозяйстве, без интернета.</p>
+                <ul class="how-facts">
+                  <li>Одна схема из&nbsp;43&nbsp;точек для&nbsp;съёмки сбоку и&nbsp;сзади</li>
+                  <li>13&nbsp;обученных моделей позы на&nbsp;архитектурах YOLO и&nbsp;MMPose: 5&nbsp;для вида сбоку, 8&nbsp;для вида сзади</li>
+                  <li>Отдельный детектор находит каждую корову в&nbsp;кадре</li>
+                  <li>Оценка экстерьера одной коровы&nbsp;— 35&nbsp;мс</li>
+                  <li>Работает, даже когда корову частично заслоняют соседки или ограждение</li>
+                  <li><span>На&nbsp;контрольных испытаниях: распознавание животных&nbsp;— 99%, точность точек скелета&nbsp;— 97%</span></li>
+                </ul>
+              </div>
+              <div class="how-media how-media-cow">
+                <img src="assets/img/cow-keypoints.webp" width="1350" height="790" loading="lazy"
+                     alt="Корова сбоку с точками скелета, которые ставит нейросеть: позвоночник, таз, суставы ног, голова">
+              </div>
+            </li>
+
+            <li class="how-card" data-how-step="3">
+              <div class="how-text">
+                <span class="how-no" aria-hidden="true">03</span>
+                <h3 class="how-label">Оценка</h3>
+                <p class="how-say">Походка получает балл хромоты по&nbsp;<span class="nowrap">шкале 1–5</span>, экстерьер&nbsp;— <span class="nowrap">баллы 1–9</span> по&nbsp;методике ОТТ, как у&nbsp;бонитера.</p>
+                <ul class="how-facts">
+                  <li>Походка: углы суставов, симметрия шага и&nbsp;линия спины на&nbsp;каждом проходе, в&nbsp;сравнении с&nbsp;нормой этой коровы</li>
+                  <li>Экстерьер, 7&nbsp;признаков: рост в&nbsp;холке и&nbsp;в&nbsp;крестце, ширина груди, глубина туловища, ширина таза, наклон таза, постановка задних ног, глубина вымени</li>
+                </ul>
+              </div>
+              <div class="how-media how-media-score" role="img" aria-label="Пример оценки коровы 1025: хромота 1,5 по шкале от 1 до 5, глубина вымени 7 по шкале от 1 до 9, рост 148 сантиметров">
+                <div class="how-score" aria-hidden="true">
+                  <div class="tag how-tag">
+                    <span class="tag-no">1025</span>
+                    <span class="tag-row"><span>походка</span><b>1,5</b></span>
+                    <span class="tag-row"><span>вымя</span><b>7</b></span>
+                    <span class="tag-row"><span>рост</span><b>148&nbsp;см</b></span>
+                  </div>
+                  <div class="how-scales">
+                    <div class="scale" style="--at: .125">
+                      <p class="scale-head"><span>Хромота</span><b>1,5</b></p>
+                      <div class="scale-track"><i></i></div>
+                      <p class="scale-ticks"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></p>
+                    </div>
+                    <div class="scale" style="--at: .75">
+                      <p class="scale-head"><span>Глубина вымени</span><b>7</b></p>
+                      <div class="scale-track"><i></i></div>
+                      <p class="scale-ticks"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="how-card" data-how-step="4">
+              <div class="how-text">
+                <span class="how-no" aria-hidden="true">04</span>
+                <h3 class="how-label">Результат</h3>
+                <p class="how-say">Зоотехник открывает профиль коровы по&nbsp;RFID: индекс хромоты по&nbsp;дням и&nbsp;видео прохода сбоку и&nbsp;спереди со&nbsp;скелетом.</p>
+                <p class="status"><span class="status-dot status-dot-early" aria-hidden="true"></span>Выгрузка в&nbsp;СЕЛЭКС и&nbsp;1С&nbsp;— в&nbsp;разработке</p>
+              </div>
+              <div class="how-media how-media-ui">
+                <video autoplay muted loop playsinline preload="metadata" width="1200" height="940" poster="assets/media/ui-lameness.jpg?v=2" aria-label="Запись интерфейса системы: профиль коровы по RFID, индекс хромоты по дням, видео прохода сбоку и спереди со скелетом">
+                  <source src="assets/media/ui-lameness.mp4?v=2" type="video/mp4">
+                </video>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="tech-cta dark">
+      <div class="wrap tech-cta-row">
+        <h2 class="h2">Посмотрим, как это встанет в&nbsp;ваш коровник</h2>
+        <div class="tech-cta-btns">
+          <a class="btn btn-tag btn-lg" href="index.html#contact">Заказать демонстрацию</a>
+          <a class="btn btn-outline btn-lg" href="index.html#formats">Форматы работы</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" data-cowfoot>
+    <div class="wrap">
+      <nav class="footer-cols" aria-label="Ссылки в подвале">
+        <div class="footer-col">
+          <p class="footer-col-title">Модули</p>
+          <ul>
+            <li><a href="index.html#pick-lameness">Ранняя хромота</a></li>
+            <li><a href="index.html#pick-exterior">Оценка экстерьера</a></li>
+            <li><a href="index.html#pick-both">Оба модуля</a></li>
+            <li><a href="technology.html">Как работает система</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">О проекте</p>
+          <ul>
+            <li><a href="index.html#about">Кто мы</a></li>
+            <li><a href="index.html#why">Почему мы</a></li>
+            <li><a href="index.html#formats">Форматы работы</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">Публикации</p>
+          <ul>
+            <li><a href="https://veterinaryworld.org/Vol.19/October-2026/3.php" target="_blank" rel="noopener">Veterinary World, 2026</a></li>
+            <li><a href="https://www.comnews.ru/digital-economy/content/245881/2026-06-17/2026-w25/1012/uchenye-timiryazevskoy-akademii-sozdali-ii-sistemu-dlya-kontrolya-zdorovya-krupnogo-rogatogo-skota" target="_blank" rel="noopener">ComNews</a></li>
+            <li><a href="https://smotrim.ru/video/6127386" target="_blank" rel="noopener">Смотрим</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">Связаться</p>
+          <ul>
+            <li><a href="index.html#contact">Заказать демонстрацию</a></li>
+            <li><a href="mailto:top_apk@rgau-msha.ru">top_apk@rgau-msha.ru</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="cf-stage" data-cf-stage>
+        <div class="cf-cta" data-cf-cta>
+          <p class="cf-kicker">Так работает сенсорная зона</p>
+          <p class="cf-title">Покажем систему на&nbsp;ваших коровах</p>
+          <div class="cf-actions">
+            <a class="btn btn-tag btn-lg" href="index.html#contact">Заказать демонстрацию</a>
+          </div>
+        </div>
+
+        <svg class="cf-gate" data-cf-gate viewBox="0 0 120 200" aria-hidden="true">
+          <path class="cf-cone" d="M60 26 L10 199 L110 199 Z" />
+          <path class="cf-line" d="M12 199 V22 H108 V199" />
+          <rect class="cf-line cf-fill" x="47" y="8" width="26" height="14" rx="3" />
+          <circle class="cf-line" cx="60" cy="15" r="3.5" />
+          <circle class="cf-rec" cx="68.5" cy="11.5" r="1.4" />
+        </svg>
+        <div class="cf-beam" data-cf-beam aria-hidden="true"></div>
+
+        <div class="cf-cow" data-cf-cow aria-hidden="true">
+          <svg class="cf-cow-svg" viewBox="40 190 1380 742" aria-hidden="true">
+            <defs><clipPath id="cf-clip"><rect data-cf-clip x="2000" y="0" width="2000" height="1200" /></clipPath></defs>
+            <g data-cf-body>
+              <g class="cf-leg cf-far" data-leg="0" data-off="1" data-px="250" data-py="593"><path class="cf-hide" d="M199 558 199 637 207 623 208 624 207 638 199 662 200 670 219 699 224 709 241 731 263 765 283 807 286 817 288 836 295 842 302 841 304 842 305 851 302 858 303 869 321 889 327 892 337 895 357 898 378 899 383 897 386 894 386 891 374 868 374 864 371 862 369 855 357 834 340 811 332 793 320 774 299 733 289 705 286 689 286 678 291 652 301 624 302 625 302 640 306 649 319 649 322 645 323 636 325 634 327 636 333 636 337 632 340 623 343 622 342 616 345 612 354 607 357 608 361 606 363 602 366 600 367 601 374 600 386 606 386 558Z" /></g>
+<g class="cf-leg cf-far" data-leg="1" data-off="0" data-px="658" data-py="566"><path class="cf-hide" d="M732 558 516 558 516 634 534 634 564 631 575 628 581 628 602 623 607 623 619 619 625 621 630 617 635 618 640 621 640 624 625 655 620 671 607 701 603 713 603 717 601 720 598 735 591 750 562 791 544 812 537 823 527 832 523 838 523 843 528 850 532 851 532 853 529 859 529 862 518 878 516 884 516 892 521 906 530 913 537 916 547 918 562 919 563 921 589 920 598 917 598 914 580 885 580 878 576 869 576 861 578 852 585 842 600 808 614 784 627 765 639 753 652 746 661 738 680 712 703 677 719 659 732 648Z" /></g>
+
+              <path class="cf-tailline cf-tail" d="M74 262 C64 330 78 420 86 500 C90 545 92 580 96 612" />
+              <path class="cf-hide" d="M49 322 49 349 52 366 62 403 66 452 71 488 71 524 69 542 70 546 68 551 66 567 67 584 70 587 71 599 74 602 77 613 83 623 86 625 88 631 92 635 93 640 88 647 193 647 207 623 208 631 204 647 293 647 301 624 302 625 302 640 304 646 309 651 316 651 322 645 323 636 325 634 327 636 333 636 337 632 340 623 343 622 342 617 343 614 354 607 357 608 361 606 363 602 366 600 367 601 374 600 380 602 411 618 412 621 415 620 416 622 431 629 439 631 471 629 476 631 490 632 498 634 534 634 570 630 575 628 581 628 602 623 607 623 619 619 625 621 628 618 632 617 639 620 640 624 629 647 733 647 754 630 813 647 932 647 931 629 938 622 975 603 1001 584 1040 547 1050 534 1071 512 1087 499 1105 487 1114 483 1117 480 1153 462 1164 459 1166 461 1172 460 1182 461 1197 466 1227 481 1230 481 1238 485 1252 489 1266 491 1282 491 1308 488 1316 490 1317 493 1321 492 1341 503 1356 503 1363 501 1375 495 1379 491 1382 491 1391 486 1397 480 1404 467 1407 455 1405 446 1401 439 1380 419 1332 353 1325 341 1320 336 1313 317 1312 310 1307 299 1298 286 1278 263 1277 247 1279 246 1282 240 1281 237 1283 234 1282 229 1284 228 1284 226 1273 223 1270 220 1270 218 1265 219 1261 217 1262 213 1258 214 1255 213 1254 210 1250 208 1241 206 1234 206 1230 208 1228 205 1224 205 1220 208 1219 214 1217 211 1207 210 1206 213 1208 214 1207 218 1204 217 1193 220 1191 226 1186 225 1183 227 1182 229 1183 234 1180 236 1177 236 1173 243 1168 244 1168 251 1162 257 1142 262 1121 265 1061 266 1060 265 1038 265 1002 261 991 261 974 258 894 231 870 226 864 223 860 223 843 218 826 216 777 217 776 218 771 217 770 218 739 219 731 221 716 221 703 223 640 224 639 225 620 225 619 226 564 225 515 230 459 230 458 229 439 230 438 229 424 229 423 228 392 226 358 219 313 206 285 205 272 207 268 209 252 212 249 214 235 215 214 220 207 220 203 222 146 228 119 234 108 240 105 240 86 250 79 256 78 259 73 264 64 278 56 295 51 310Z" />
+              
+              
+              <g class="cf-leg" data-leg="2" data-off="0" data-px="248" data-py="491"><path class="cf-hide" d="M80 558 80 617 83 623 86 625 88 631 91 633 93 639 82 655 80 667 85 688 90 733 97 763 106 820 109 855 106 861 106 868 109 872 109 875 112 878 119 879 123 877 126 880 128 884 127 908 133 918 139 923 148 925 179 925 180 924 200 924 211 922 214 919 211 912 189 886 186 880 180 875 174 865 168 859 162 848 160 838 158 835 147 799 144 776 144 758 146 742 152 722 168 690 207 623 208 624 207 638 203 649 214 649 214 558Z" /></g>
+<g class="cf-leg" data-leg="3" data-off="1" data-px="807" data-py="592"><path class="cf-hide" d="M817 558 817 648 831 652 835 663 850 693 858 706 869 731 874 747 878 753 892 766 904 786 917 812 929 846 934 870 936 873 936 883 939 892 943 894 948 894 952 891 955 892 958 895 960 900 959 910 965 923 978 928 1024 928 1025 927 1036 927 1045 924 1045 918 1005 876 1002 875 985 858 958 805 951 785 951 774 954 765 954 755 955 754 954 730 950 717 950 713 938 678 938 673 935 664 931 642 931 629 938 622 961 611 981 599 1001 584 1029 558Z" /></g>
+              <g class="cf-bones" clip-path="url(#cf-clip)"><line class="cf-l cf-g" x1="100" y1="245" x2="206" y2="217" /><line class="cf-l cf-g" x1="206" y1="217" x2="297" y2="200" /><line class="cf-l cf-g" x1="297" y1="200" x2="446" y2="226" /><line class="cf-l cf-g" x1="446" y1="226" x2="600" y2="223" /><line class="cf-l cf-g" x1="600" y1="223" x2="814" y2="208" /><line class="cf-l cf-g" x1="814" y1="208" x2="1000" y2="263" /><line class="cf-l cf-g" x1="1000" y1="263" x2="1210" y2="270" /><line class="cf-l cf-g" x1="1210" y1="270" x2="1293" y2="345" /><line class="cf-l cf-g" x1="1293" y1="345" x2="1373" y2="475" /><line class="cf-l cf-g" x1="1210" y1="270" x2="1373" y2="475" /><line class="cf-l cf-g" x1="297" y1="200" x2="657" y2="604" /><line class="cf-l cf-g" x1="250" y1="593" x2="449" y2="615" /><line class="cf-l cf-g" x1="449" y1="615" x2="657" y2="604" /><line class="cf-l cf-g" x1="657" y1="604" x2="750" y2="596" /><line class="cf-l cf-g" x1="750" y1="596" x2="807" y2="592" /><line class="cf-l cf-g" x1="807" y1="592" x2="892" y2="650" /><line class="cf-l cf-g" x1="814" y1="208" x2="908" y2="472" /><line class="cf-l cf-g" x1="814" y1="208" x2="974" y2="492" /><line class="cf-l cf-g" x1="908" y1="472" x2="892" y2="650" /><line class="cf-l cf-g" x1="974" y1="492" x2="892" y2="650" /><line class="cf-l cf-g" x1="657" y1="604" x2="908" y2="472" /><line class="cf-l cf-g" x1="657" y1="604" x2="974" y2="492" /><line class="cf-l cf-b" x1="100" y1="245" x2="153" y2="270" /><line class="cf-l cf-b" x1="153" y1="270" x2="248" y2="491" /><line class="cf-l cf-b" x1="974" y1="492" x2="807" y2="592" /><line class="cf-l cf-b" x1="974" y1="492" x2="903" y2="586" /><line class="cf-l cf-b" x1="903" y1="586" x2="892" y2="650" /><line class="cf-l cf-o" x1="313" y1="210" x2="173" y2="263" /><line class="cf-l cf-o" x1="173" y1="263" x2="325" y2="500" /><line class="cf-l cf-o" x1="325" y1="500" x2="250" y2="593" /><line class="cf-l cf-o" x1="908" y1="472" x2="658" y2="566" /><line class="cf-l cf-o" x1="658" y1="566" x2="657" y2="604" /><line class="cf-l cf-o" x1="908" y1="472" x2="750" y2="596" /><line class="cf-l cf-o" x1="206" y1="217" x2="173" y2="263" /></g>
+              <g class="cf-legsk" data-legsk="0"><line class="cf-l cf-o" x1="250" y1="593" x2="206" y2="664" /><line class="cf-l cf-o" x1="206" y1="664" x2="301" y2="810" /><line class="cf-l cf-o" x1="301" y1="810" x2="331" y2="864" /><circle class="cf-pt cf-o" cx="206" cy="664" r="11" /><circle class="cf-pt cf-o" cx="301" cy="810" r="11" /><circle class="cf-pt cf-o" cx="331" cy="864" r="11" /></g><g class="cf-legsk" data-legsk="1"><line class="cf-l cf-o" x1="658" y1="566" x2="644" y2="721" /><line class="cf-l cf-o" x1="644" y1="721" x2="569" y2="830" /><line class="cf-l cf-o" x1="569" y1="830" x2="565" y2="889" /><circle class="cf-pt cf-o" cx="644" cy="721" r="11" /><circle class="cf-pt cf-o" cx="569" cy="830" r="11" /><circle class="cf-pt cf-o" cx="565" cy="889" r="11" /></g><g class="cf-legsk" data-legsk="2"><line class="cf-l cf-b" x1="248" y1="491" x2="92" y2="665" /><line class="cf-l cf-b" x1="92" y1="665" x2="142" y2="841" /><line class="cf-l cf-b" x1="142" y1="841" x2="177" y2="900" /><circle class="cf-pt cf-b" cx="92" cy="665" r="11" /><circle class="cf-pt cf-b" cx="142" cy="841" r="11" /><circle class="cf-pt cf-b" cx="177" cy="900" r="11" /></g><g class="cf-legsk" data-legsk="3"><line class="cf-l cf-b" x1="807" y1="592" x2="907" y2="733" /><line class="cf-l cf-b" x1="907" y1="733" x2="956" y2="862" /><line class="cf-l cf-b" x1="956" y1="862" x2="1003" y2="902" /><circle class="cf-pt cf-b" cx="907" cy="733" r="11" /><circle class="cf-pt cf-b" cx="956" cy="862" r="11" /><circle class="cf-pt cf-b" cx="1003" cy="902" r="11" /></g>
+              <circle class="cf-pt cf-g" data-lx="100" cx="100" cy="245" r="11" /><circle class="cf-pt cf-g" data-lx="206" cx="206" cy="217" r="11" /><circle class="cf-pt cf-g" data-lx="297" cx="297" cy="200" r="11" /><circle class="cf-pt cf-g" data-lx="446" cx="446" cy="226" r="11" /><circle class="cf-pt cf-g" data-lx="600" cx="600" cy="223" r="11" /><circle class="cf-pt cf-g" data-lx="814" cx="814" cy="208" r="11" /><circle class="cf-pt cf-g" data-lx="1000" cx="1000" cy="263" r="11" /><circle class="cf-pt cf-g" data-lx="1210" cx="1210" cy="270" r="11" /><circle class="cf-pt cf-g" data-lx="1373" cx="1373" cy="475" r="11" /><circle class="cf-pt cf-g" data-lx="250" cx="250" cy="593" r="11" /><circle class="cf-pt cf-g" data-lx="449" cx="449" cy="615" r="11" /><circle class="cf-pt cf-g" data-lx="657" cx="657" cy="604" r="11" /><circle class="cf-pt cf-g" data-lx="892" cx="892" cy="650" r="11" /><circle class="cf-pt cf-o" data-lx="1293" cx="1293" cy="345" r="11" /><circle class="cf-pt cf-b" data-lx="153" cx="153" cy="270" r="11" /><circle class="cf-pt cf-b" data-lx="248" cx="248" cy="491" r="11" /><circle class="cf-pt cf-b" data-lx="974" cx="974" cy="492" r="11" /><circle class="cf-pt cf-b" data-lx="903" cx="903" cy="586" r="11" /><circle class="cf-pt cf-b" data-lx="807" cx="807" cy="592" r="11" /><circle class="cf-pt cf-o" data-lx="173" cx="173" cy="263" r="11" /><circle class="cf-pt cf-o" data-lx="313" cx="313" cy="210" r="11" /><circle class="cf-pt cf-o" data-lx="325" cx="325" cy="500" r="11" /><circle class="cf-pt cf-o" data-lx="908" cx="908" cy="472" r="11" /><circle class="cf-pt cf-o" data-lx="658" cx="658" cy="566" r="11" /><circle class="cf-pt cf-o" data-lx="750" cx="750" cy="596" r="11" />
+              <g class="cf-measure">
+                <rect class="cf-box" x="49" y="200" width="1358" height="728" />
+                <path class="cf-dim" d="M790 208 V928 M770 208 H810 M770 928 H810" />
+                <path class="cf-dim" d="M974 492 L153 270" />
+              </g>
+            </g>
+          </svg>
+          <p class="cf-chip cf-chip-tag" style="left:0.7%;top:1.3%">Пример разметки</p>
+          <p class="cf-chip cf-chip-top" style="left:54.3%;top:1.3%">Высота в холке <b>147 см</b></p>
+          <p class="cf-chip cf-chip-mid cf-chip-opt" style="left:37.9%;top:25.7%">Косая длина <b>166 см</b></p>
+          <p class="cf-chip cf-chip-top cf-chip-opt" style="left:84.8%;top:9.7%">Экстерьер <b>7,4 / 9</b></p>
+          <p class="cf-chip cf-chip-side" style="left:73.2%;top:79.5%">Походка <b>норма</b></p>
+        </div>
+
+        <div class="cf-ground" aria-hidden="true"></div>
+      </div>
+
+      <svg class="cf-word" viewBox="0 0 1000 128" role="img" aria-label="АгроБиоСенс">
+        <text x="500" y="116" text-anchor="middle" textLength="996" lengthAdjust="spacingAndGlyphs">АГРО БИО СЕНС</text>
+      </svg>
+
+      <div class="footer-row">
+        <p>АгроБиоСенс — разработка РГАУ-МСХА имени К.А. Тимирязева, Проектный институт цифровой трансформации АПК. Правообладатель — РГАУ-МСХА имени К.А. Тимирязева.</p>
+        <p><a href="mailto:top_apk@rgau-msha.ru">top_apk@rgau-msha.ru</a> · © 2026 <a href="#">Политика обработки персональных данных</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js?v=9" defer></script>
+</body>
+</html>
