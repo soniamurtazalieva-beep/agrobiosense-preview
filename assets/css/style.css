@@ -463,6 +463,7 @@ body:has(.modal[open]) { overflow: hidden; }
 .footer-row p { max-width: 70ch; }
 .footer-row a { text-underline-offset: 3px; }
 @media (min-width: 900px) { .footer-row { grid-template-columns: 1fr auto; } }
+.footer-credit { grid-column: 1 / -1; max-width: none !important; font-size: 13px; color: var(--fog-muted); }
 .footer-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 24px; padding-block: 20px 36px; border-bottom: 1px solid var(--night-line); margin-bottom: 24px; }
 .footer-col-title { margin-bottom: 12px; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--fog); }
 .footer-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; }
