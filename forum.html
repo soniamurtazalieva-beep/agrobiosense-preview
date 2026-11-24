@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>АгроБиоСенс — обсудить сотрудничество</title>
-  <meta name="description" content="Заявка на сотрудничество с командой АгроБиоСенс: демонстрация, пилотное внедрение, совместная разработка. РГАУ-МСХА имени К.А. Тимирязева.">
-  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Заявка на сотрудничество с командой АгроБиоСенс: пилотное внедрение, партнёрство, коммерческое предложение. РГАУ-МСХА имени К.А. Тимирязева.">
+  <meta name="theme-color" content="#FFFFFF">
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" href="assets/img/favicon-192.png" type="image/png" sizes="192x192">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
@@ -15,46 +15,119 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css?v=71">
   <style>
-    body { background: var(--night); color: var(--fog); }
-    .fx-header { padding: 14px var(--gutter) 0; }
-    .fx-header .header-pill { grid-template-columns: 1fr auto; padding: 0 6px 0 22px; height: 58px; }
-    .fx-header .logo { grid-column: 1; justify-self: start; font-size: 15px; letter-spacing: .2em; }
-    .fx-header .header-end { grid-column: 2; }
-    .fx-header .btn { min-height: 44px; padding: 0 20px; font-size: 14px; }
-
-    .fx-intro { padding-block: clamp(28px, 6vw, 72px) clamp(20px, 3vw, 36px); }
-    .fx-kicker { display: inline-block; max-width: 100%; padding: 7px 14px; border-radius: 999px; background: var(--tag); color: var(--tag-ink); font-size: 13px; font-weight: 600; line-height: 1.3; }
-    .fx-title { margin-top: 18px; font: 700 clamp(34px, 5.4vw, 60px)/1.05 var(--f); letter-spacing: -.03em; max-width: 16ch; text-wrap: balance; }
-    .fx-lead { margin-top: 14px; color: var(--fog-muted); font-size: clamp(16px, 1.3vw, 18px); line-height: 1.55; max-width: 54ch; }
-
-    .fx-grid { display: grid; gap: 28px; padding-bottom: clamp(40px, 7vw, 96px); }
-    @media (min-width: 1000px) { .fx-grid { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); align-items: start; gap: 40px; } }
-
-    .form .interest span { font-size: 15px; padding: 10px 16px; }
-    .form .field select { appearance: none; -webkit-appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--fog-muted) 50%), linear-gradient(135deg, var(--fog-muted) 50%, transparent 50%); background-position: calc(100% - 22px) 50%, calc(100% - 16px) 50%; background-size: 6px 6px; background-repeat: no-repeat; padding-right: 40px; }
-    .req { color: var(--tag); }
-    .fx-optional { color: var(--fog-muted); font-weight: 400; text-transform: none; letter-spacing: 0; }
-    .form .btn { justify-self: stretch; }
-    @media (min-width: 640px) { .form .btn { justify-self: start; } }
-    .fx-step { font: 600 13px/1.3 var(--f); letter-spacing: .08em; text-transform: uppercase; color: var(--fog-muted); border-top: 1px solid var(--night-line); padding-top: 18px; }
-    .fx-step:first-child { border-top: 0; padding-top: 0; }
+    
+    :root {
+      --fx-bg: #FFFFFF;
+      --fx-ink: #141414;
+      --fx-muted: #5A5A57;
+      --fx-line: rgba(20, 20, 20, .14);
+      --fx-line-strong: rgba(20, 20, 20, .26);
+      --fx-err: #C2402A;
+      --fx-step-gap: 32px;
+    }
+    html { scroll-padding-top: 24px; }
+    body { background: var(--fx-bg); color: var(--fx-ink); }
+    :focus-visible { outline-color: var(--fx-ink); }
 
     
-    @media (max-width: 639px) {
-      .fx-grid .form { padding: 20px 16px 24px; border-radius: 20px; gap: 16px; }
-      .form .interest { display: grid; gap: 8px; }
-      .form .interest label { display: block; }
-      .form .interest span { display: block; position: relative; padding: 13px 12px 13px 44px; border-radius: 14px; font-size: 15px; line-height: 1.3; }
-      .form .interest span::before { content: ""; position: absolute; left: 14px; top: 50%; width: 20px; height: 20px; margin-top: -10px; border: 1.5px solid rgba(255, 255, 255, .45); border-radius: 50%; box-sizing: border-box; }
-      .form .interest input[type="checkbox"] + span::before { border-radius: 6px; }
-      .form .interest input:checked + span::before { border-color: var(--tag-ink); background: var(--tag-ink); box-shadow: inset 0 0 0 4px var(--tag); }
-      .form .interest input[type="checkbox"]:checked + span::before { box-shadow: none; background: var(--tag-ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3.2 3L15 6.8' fill='none' stroke='%23F4C21B' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat; }
-      .fx-step { font-size: 12px; }
-      .fx-side .fx-product { grid-template-columns: 72px 1fr; gap: 14px; padding: 10px; border-radius: 16px; }
-      .fx-side .fx-product img { width: 72px; height: 72px; border-radius: 12px; }
-      .fx-side .fx-product h3 { font-size: 16px; }
-      .fx-header .logo { font-size: 13px; letter-spacing: .16em; }
+    .fx-header { padding: 14px var(--gutter) 0; }
+    .fx-header .header-pill { grid-template-columns: 1fr auto; padding: 0 6px 0 22px; height: 58px; box-shadow: inset 0 0 0 1.5px var(--fx-ink); }
+    .fx-header .logo { grid-column: 1; justify-self: start; font-size: 15px; letter-spacing: .2em; }
+    .fx-header .header-end { grid-column: 2; }
+    .fx-header .btn { min-height: 46px; padding: 0 20px; font-size: 14px; }
+
+    
+    .fx-intro { padding-block: clamp(32px, 6vw, 64px) clamp(28px, 3.5vw, 40px); }
+    .fx-kicker { display: inline-block; max-width: 100%; padding: 7px 14px; border-radius: 999px; background: var(--tag); color: var(--tag-ink); font-size: 13px; font-weight: 600; line-height: 1.3; }
+    .fx-title { margin-top: 16px; font: 700 clamp(34px, 5.4vw, 60px)/1.05 var(--f); letter-spacing: -.03em; max-width: 16ch; text-wrap: balance; }
+    .fx-lead { margin-top: 12px; color: var(--fx-muted); font-size: clamp(16px, 1.3vw, 18px); line-height: 1.55; max-width: 52ch; }
+
+    .fx-grid { display: grid; gap: 40px; padding-bottom: clamp(40px, 7vw, 96px); }
+    @media (min-width: 1000px) { .fx-grid { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); align-items: start; gap: 48px; } }
+
+    
+    .fx-form { display: grid; gap: var(--fx-step-gap); }
+    @media (min-width: 640px) {
+      .fx-form { padding: 32px; border: 1.5px solid var(--fx-ink); border-radius: 24px; }
     }
+    .fx-stepbox { display: grid; gap: 14px; min-width: 0; }
+    .fx-stepbox + .fx-stepbox { padding-top: var(--fx-step-gap); border-top: 1px solid var(--fx-line); }
+    .fx-stepbox[hidden] { display: none; }
+    .fx-stepbox.is-new { animation: fx-in .35s ease-out both; }
+    @keyframes fx-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: reduce) { .fx-stepbox.is-new { animation: none; } }
+
+    .fx-q { display: flex; align-items: baseline; gap: 12px; padding: 0; margin: 0; font: 600 19px/1.3 var(--f); letter-spacing: -.01em; }
+    .fx-num { flex: none; display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--fx-ink); color: #fff; font-size: 13px; font-weight: 700; transform: translateY(-2px); }
+    .fx-hint { white-space: nowrap; font-weight: 400; font-size: 14px; color: var(--fx-muted); }
+    .req { color: var(--fx-err); }
+
+    
+    .fx-options { display: grid; gap: 8px; }
+    @media (min-width: 640px) { .fx-options { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); } }
+    .fx-opt { position: relative; display: block; }
+    .fx-opt input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+    .fx-opt span {
+      display: flex; align-items: center; min-height: 52px; height: 100%;
+      padding: 12px 14px 12px 46px; position: relative;
+      border: 1.5px solid var(--fx-line-strong); border-radius: 14px;
+      font-size: 15px; font-weight: 500; line-height: 1.3;
+      transition: border-color .15s, background-color .15s;
+    }
+    .fx-opt span::before {
+      content: ""; position: absolute; left: 14px; top: 50%; width: 20px; height: 20px; margin-top: -10px;
+      border: 1.5px solid var(--fx-ink); border-radius: 50%; box-sizing: border-box; background: #fff;
+    }
+    .fx-opt input[type="checkbox"] + span::before { border-radius: 6px; }
+    .fx-opt input:hover + span { border-color: var(--fx-ink); }
+    .fx-opt input:checked + span { background: var(--tag); border-color: var(--tag); }
+    .fx-opt input[type="radio"]:checked + span::before { background: var(--fx-ink); box-shadow: inset 0 0 0 4px #fff; }
+    .fx-opt input[type="checkbox"]:checked + span::before { background: var(--fx-ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3.2 3L15 6.8' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat; }
+    .fx-opt input:focus-visible + span { outline: 3px solid var(--fx-ink); outline-offset: 2px; }
+    .fx-sub { display: grid; gap: 10px; margin-top: 6px; }
+    .fx-sub[hidden] { display: none; }
+    .fx-sub-q { font-size: 15px; font-weight: 600; }
+
+    
+    .fx-fields { display: grid; gap: 16px; }
+    @media (min-width: 640px) { .fx-fields { grid-template-columns: 1fr 1fr; } .fx-field-wide { grid-column: 1 / -1; } }
+    .fx-field { display: grid; gap: 6px; align-content: start; }
+    .fx-field label { font-size: 14px; font-weight: 500; }
+    .fx-field input, .fx-field textarea {
+      width: 100%; min-height: 52px; padding: 12px 16px;
+      background: #fff; color: var(--fx-ink);
+      border: 1.5px solid var(--fx-line-strong); border-radius: 14px;
+      font: 400 16px/1.4 var(--f);
+    }
+    .fx-field input::placeholder, .fx-field textarea::placeholder { color: #9A9A96; }
+    .fx-field textarea { resize: vertical; min-height: 96px; }
+    .fx-field input:focus, .fx-field textarea:focus { outline: none; border-color: var(--fx-ink); box-shadow: 0 0 0 3px rgba(244, 194, 27, .55); }
+    .fx-field input[aria-invalid="true"] { border-color: var(--fx-err); }
+    .fx-err { font-size: 14px; color: var(--fx-err); }
+    .fx-err[hidden] { display: none; }
+
+    .fx-consent { display: flex; gap: 12px; align-items: flex-start; font-size: 14px; line-height: 1.45; color: var(--fx-muted); cursor: pointer; }
+    .fx-consent input { width: 22px; height: 22px; margin: 0; accent-color: var(--fx-ink); flex: none; }
+    .fx-submit { width: 100%; }
+    @media (min-width: 640px) { .fx-submit { width: auto; justify-self: start; } }
+    .fx-done { padding: 16px 18px; border-radius: 14px; background: #FFF6D6; border: 1.5px solid var(--tag); font-size: 15px; line-height: 1.5; }
+    .fx-done[hidden] { display: none; }
+
+    
+    .fx-side { display: grid; gap: 12px; }
+    @media (min-width: 1000px) { .fx-side { position: sticky; top: 24px; } }
+    .fx-side-title { font: 600 13px/1.3 var(--f); letter-spacing: .08em; text-transform: uppercase; color: var(--fx-muted); margin-bottom: 2px; }
+    .fx-product { display: grid; grid-template-columns: 80px 1fr; gap: 16px; align-items: center; padding: 12px; border: 1.5px solid var(--fx-line); border-radius: 18px; }
+    .fx-product img { width: 80px; height: 80px; object-fit: cover; border-radius: 12px; }
+    .fx-product h3 { font: 600 16px/1.25 var(--f); }
+    .fx-product p { margin-top: 4px; font-size: 14px; line-height: 1.45; color: var(--fx-muted); }
+    .fx-contact { margin-top: 4px; padding: 18px 20px; border-radius: 18px; background: var(--fx-ink); color: #fff; display: grid; gap: 4px; font-size: 15px; }
+    .fx-contact a { color: #fff; font-weight: 600; text-decoration: none; }
+    .fx-contact a:hover { text-decoration: underline; text-underline-offset: 4px; }
+    .fx-contact span { color: #CFCFCB; font-size: 14px; }
+    .fx-contact :focus-visible { outline-color: var(--tag); }
+    .fx-foot { padding: 24px 0 40px; border-top: 1px solid var(--fx-line); font-size: 13px; line-height: 1.5; color: var(--fx-muted); }
+    .fx-foot a { color: var(--fx-ink); }
 
     
     @media (max-width: 359px) {
@@ -63,24 +136,12 @@
       .fx-header .btn { padding: 0 14px; font-size: 13px; }
       .fx-kicker { font-size: 12px; padding: 6px 12px; }
       .fx-title { font-size: 30px; }
-      .fx-grid .form { padding: 18px 12px 20px; }
-      .form .interest span { padding-left: 40px; font-size: 14px; }
-      .form .interest span::before { left: 12px; }
+      .fx-q { font-size: 17px; gap: 10px; }
+      .fx-opt span { padding-left: 42px; font-size: 14px; }
+      .fx-opt span::before { left: 12px; }
+      .fx-product { grid-template-columns: 64px 1fr; gap: 12px; }
+      .fx-product img { width: 64px; height: 64px; }
     }
-
-    .fx-side { display: grid; gap: 14px; }
-    @media (min-width: 1000px) { .fx-side { position: sticky; top: 24px; } }
-    .fx-side-title { font: 600 14px/1.3 var(--f); letter-spacing: .08em; text-transform: uppercase; color: var(--fog-muted); }
-    .fx-product { display: grid; grid-template-columns: 96px 1fr; gap: 16px; align-items: center; padding: 12px; border-radius: 20px; background: var(--night-2); }
-    .fx-product img { width: 96px; height: 96px; object-fit: cover; border-radius: 14px; }
-    .fx-product h3 { font: 600 17px/1.25 var(--f); }
-    .fx-product p { margin-top: 4px; font-size: 14px; line-height: 1.45; color: var(--fog-muted); }
-    .fx-contact { margin-top: 6px; padding: 18px 20px; border-radius: 20px; border: 1.5px solid var(--night-line); display: grid; gap: 6px; font-size: 15px; }
-    .fx-contact a { color: #fff; font-weight: 600; text-decoration: none; }
-    .fx-contact a:hover { text-decoration: underline; text-underline-offset: 4px; }
-    .fx-contact span { color: var(--fog-muted); font-size: 14px; }
-    .fx-foot { padding: 24px 0 40px; border-top: 1px solid var(--night-line); font-size: 13px; color: var(--fog-muted); }
-    .fx-foot a { color: var(--fog); }
   </style>
 </head>
 <body>
@@ -99,110 +160,106 @@
     <section class="wrap fx-intro">
       <p class="fx-kicker">Форум «Молоко России» · 24–26&nbsp;ноября</p>
       <h1 class="fx-title">Обсудим сотрудничество</h1>
-      <p class="fx-lead">Цифровые технологии продуктивного долголетия молочного стада. Оставьте контакты&nbsp;— свяжемся в&nbsp;течение двух рабочих дней.</p>
+      <p class="fx-lead">Цифровые технологии продуктивного долголетия молочного стада. Четыре коротких вопроса&nbsp;— и&nbsp;мы свяжемся с&nbsp;вами в&nbsp;течение двух рабочих дней.</p>
     </section>
 
     <div class="wrap fx-grid">
-      <form class="form" id="form" data-fx-form novalidate>
-        <p class="fx-step">Что вам интересно <span class="req" aria-hidden="true">*</span></p>
-        <fieldset class="interest" aria-describedby="fx-goal-err">
-          <legend class="sr-only">Что вам интересно (обязательно)</legend>
-          <label><input type="radio" name="goal" value="Посмотреть демонстрацию"><span>Посмотреть демонстрацию</span></label>
-          <label><input type="radio" name="goal" value="Пилот на моём хозяйстве"><span>Пилот на&nbsp;моём хозяйстве</span></label>
-          <label><input type="radio" name="goal" value="Вложиться в пилот / софинансировать разработку"><span>Вложиться в&nbsp;пилот</span></label>
-          <label><input type="radio" name="goal" value="Купить решение — получить КП"><span>Купить&nbsp;— получить&nbsp;КП</span></label>
-          <label><input type="radio" name="goal" value="Дистрибуция и сервисное партнёрство"><span>Стать дистрибьютором</span></label>
-          <label><input type="radio" name="goal" value="Другое"><span>Другое</span></label>
-        </fieldset>
-        <p class="field-error" id="fx-goal-err" hidden>Выберите, что вам интересно</p>
+      <form class="fx-form" id="form" data-fx-form novalidate>
 
-        <p class="fx-step">Какие продукты <span class="fx-optional">— можно несколько</span></p>
-        <fieldset class="interest">
-          <legend class="sr-only">Какие продукты интересуют</legend>
-          <label><input type="checkbox" name="product" value="Локомоция"><span>Локомоция — хромота</span></label>
-          <label><input type="checkbox" name="product" value="Фенотип"><span>Фенотип — экстерьер</span></label>
-          <label><input type="checkbox" name="product" value="Фенотип Mobile"><span>Фенотип Mobile</span></label>
-          <label><input type="checkbox" name="product" value="Комплексное оснащение"><span>Комплексное оснащение</span></label>
-          <label><input type="checkbox" name="product" value="Пока не знаю"><span>Пока не знаю</span></label>
-        </fieldset>
-
-        <p class="fx-step">О вас</p>
-        <div class="field-pair">
-          <div class="field">
-            <label for="fx-who">Кого вы представляете <span class="req" aria-hidden="true">*</span></label>
-            <select id="fx-who" name="who" required>
-              <option value="">Выберите</option>
-              <option>Молочное хозяйство / агрохолдинг</option>
-              <option>Племенная или селекционная организация</option>
-              <option>Сервисная или ветеринарная компания</option>
-              <option>Инвестор / фонд</option>
-              <option>Органы власти, отраслевой союз</option>
-              <option>Вуз / НИИ</option>
-              <option>Другое</option>
-            </select>
-            <p class="field-error" id="fx-who-err" hidden>Выберите вариант</p>
-          </div>
-          <div class="field" data-fx-herd hidden>
-            <label for="fx-herd">Поголовье дойного стада</label>
-            <select id="fx-herd" name="herd">
-              <option value="">Не указано</option>
-              <option>до 500 голов</option>
-              <option>500–1 000 голов</option>
-              <option>1 000–5 000 голов</option>
-              <option>свыше 5 000 голов</option>
-            </select>
+        <div class="fx-stepbox" data-step="1" role="group" aria-labelledby="fx-q1">
+          <p class="fx-q" id="fx-q1"><span class="fx-num" aria-hidden="true">1</span><span>Что вам интересно?</span></p>
+          <div class="fx-options">
+            <label class="fx-opt"><input type="radio" name="goal" value="Пилот на моём хозяйстве"><span>Пилот на&nbsp;моём хозяйстве</span></label>
+            <label class="fx-opt"><input type="radio" name="goal" value="Стать партнёром"><span>Стать партнёром</span></label>
+            <label class="fx-opt"><input type="radio" name="goal" value="Купить решение — получить КП"><span>Купить&nbsp;— получить&nbsp;КП</span></label>
+            <label class="fx-opt"><input type="radio" name="goal" value="Дистрибуция и сервисное партнёрство"><span>Стать дистрибьютором</span></label>
+            <label class="fx-opt"><input type="radio" name="goal" value="Другое"><span>Другое</span></label>
           </div>
         </div>
-        <div class="field-pair">
-          <div class="field">
-            <label for="fx-org">Организация и регион <span class="req" aria-hidden="true">*</span></label>
-            <input id="fx-org" name="org" type="text" autocomplete="organization" placeholder="Название, регион" required>
-            <p class="field-error" id="fx-org-err" hidden>Укажите организацию</p>
+
+        <div class="fx-stepbox" data-step="2" role="group" aria-labelledby="fx-q2" hidden>
+          <p class="fx-q" id="fx-q2"><span class="fx-num" aria-hidden="true">2</span><span>Какие продукты? <span class="fx-hint">можно несколько</span></span></p>
+          <div class="fx-options">
+            <label class="fx-opt"><input type="checkbox" name="product" value="Локомоция"><span>Локомоция&nbsp;— хромота</span></label>
+            <label class="fx-opt"><input type="checkbox" name="product" value="Фенотип"><span>Фенотип&nbsp;— экстерьер</span></label>
+            <label class="fx-opt"><input type="checkbox" name="product" value="Фенотип Mobile"><span>Фенотип Mobile</span></label>
+            <label class="fx-opt"><input type="checkbox" name="product" value="Комплексное оснащение"><span>Комплексное оснащение</span></label>
+            <label class="fx-opt"><input type="checkbox" name="product" value="Пока не знаю"><span>Пока не знаю</span></label>
           </div>
-          <div class="field">
-            <label for="fx-name">Имя и должность <span class="req" aria-hidden="true">*</span></label>
-            <input id="fx-name" name="name" type="text" autocomplete="name" required>
-            <p class="field-error" id="fx-name-err" hidden>Напишите, как к вам обращаться</p>
-          </div>
-        </div>
-        <div class="field-pair">
-          <div class="field">
-            <label for="fx-phone">Телефон <span class="req" aria-hidden="true">*</span></label>
-            <input id="fx-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7" required>
-            <p class="field-error" id="fx-phone-err" hidden>Оставьте телефон, чтобы мы могли связаться</p>
-          </div>
-          <div class="field">
-            <label for="fx-email">E-mail <span class="fx-optional">— необязательно</span></label>
-            <input id="fx-email" name="email" type="email" inputmode="email" autocomplete="email">
-          </div>
-        </div>
-        <div class="field">
-          <label for="fx-msg">Комментарий <span class="fx-optional">— необязательно</span></label>
-          <textarea id="fx-msg" name="message" rows="3" placeholder="Удобное время для звонка, вопрос команде"></textarea>
         </div>
 
-        <label class="consent">
-          <input type="checkbox" name="consent" required>
-          <span>Согласен на обработку персональных данных РГАУ‑МСХА имени К.А.&nbsp;Тимирязева для ответа на&nbsp;заявку по&nbsp;152‑ФЗ</span>
-        </label>
-        <p class="field-error" id="fx-consent-err" hidden>Без согласия мы не сможем обработать заявку</p>
+        <div class="fx-stepbox" data-step="3" role="group" aria-labelledby="fx-q3" hidden>
+          <p class="fx-q" id="fx-q3"><span class="fx-num" aria-hidden="true">3</span><span>Кого вы представляете?</span></p>
+          <div class="fx-options">
+            <label class="fx-opt"><input type="radio" name="who" value="Молочное хозяйство / агрохолдинг"><span>Молочное хозяйство, агрохолдинг</span></label>
+            <label class="fx-opt"><input type="radio" name="who" value="Племенная или селекционная организация"><span>Племенная организация</span></label>
+            <label class="fx-opt"><input type="radio" name="who" value="Сервисная или ветеринарная компания"><span>Сервисная или ветеринарная компания</span></label>
+            <label class="fx-opt"><input type="radio" name="who" value="Инвестор / фонд"><span>Инвестор, фонд</span></label>
+            <label class="fx-opt"><input type="radio" name="who" value="Органы власти, отраслевой союз"><span>Органы власти, отраслевой союз</span></label>
+            <label class="fx-opt"><input type="radio" name="who" value="Вуз / НИИ"><span>Вуз, НИИ</span></label>
+            <label class="fx-opt"><input type="radio" name="who" value="Другое"><span>Другое</span></label>
+          </div>
+          <div class="fx-sub" data-fx-herd hidden>
+            <p class="fx-sub-q" id="fx-herd-q">Поголовье дойного стада <span class="fx-hint">необязательно</span></p>
+            <div class="fx-options" role="radiogroup" aria-labelledby="fx-herd-q">
+              <label class="fx-opt"><input type="radio" name="herd" value="до 500"><span>до 500 голов</span></label>
+              <label class="fx-opt"><input type="radio" name="herd" value="500–1 000"><span>500–1&nbsp;000 голов</span></label>
+              <label class="fx-opt"><input type="radio" name="herd" value="1 000–5 000"><span>1&nbsp;000–5&nbsp;000 голов</span></label>
+              <label class="fx-opt"><input type="radio" name="herd" value="свыше 5 000"><span>свыше 5&nbsp;000 голов</span></label>
+            </div>
+          </div>
+        </div>
 
-        <button class="btn btn-tag btn-lg" type="submit">Отправить заявку</button>
-        <p class="form-done" data-fx-done hidden role="status" tabindex="-1">Спасибо! Заявка у&nbsp;команды АгроБиоСенс — свяжемся в&nbsp;течение двух рабочих дней.</p>
+        <div class="fx-stepbox" data-step="4" role="group" aria-labelledby="fx-q4" hidden>
+          <p class="fx-q" id="fx-q4"><span class="fx-num" aria-hidden="true">4</span><span>Как с&nbsp;вами связаться?</span></p>
+          <div class="fx-fields">
+            <div class="fx-field">
+              <label for="fx-name">Имя и должность <span class="req" aria-hidden="true">*</span></label>
+              <input id="fx-name" name="name" type="text" autocomplete="name" required>
+              <p class="fx-err" id="fx-name-err" hidden>Напишите, как к вам обращаться</p>
+            </div>
+            <div class="fx-field">
+              <label for="fx-org">Организация и регион <span class="req" aria-hidden="true">*</span></label>
+              <input id="fx-org" name="org" type="text" autocomplete="organization" placeholder="Название, регион" required>
+              <p class="fx-err" id="fx-org-err" hidden>Укажите организацию</p>
+            </div>
+            <div class="fx-field">
+              <label for="fx-phone">Телефон <span class="req" aria-hidden="true">*</span></label>
+              <input id="fx-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7" required>
+              <p class="fx-err" id="fx-phone-err" hidden>Оставьте телефон, чтобы мы могли связаться</p>
+            </div>
+            <div class="fx-field">
+              <label for="fx-email">E-mail <span class="fx-hint">необязательно</span></label>
+              <input id="fx-email" name="email" type="email" inputmode="email" autocomplete="email">
+            </div>
+            <div class="fx-field fx-field-wide">
+              <label for="fx-msg">Комментарий <span class="fx-hint">необязательно</span></label>
+              <textarea id="fx-msg" name="message" rows="3" placeholder="Удобное время для звонка, вопрос команде"></textarea>
+            </div>
+          </div>
+          <label class="fx-consent">
+            <input type="checkbox" name="consent" required>
+            <span>Согласен на обработку персональных данных РГАУ‑МСХА имени К.А.&nbsp;Тимирязева для ответа на&nbsp;заявку по&nbsp;152‑ФЗ</span>
+          </label>
+          <p class="fx-err" id="fx-consent-err" hidden>Без согласия мы не сможем обработать заявку</p>
+          <button class="btn btn-tag btn-lg fx-submit" type="submit">Отправить заявку</button>
+        </div>
+
+        <p class="fx-done" data-fx-done hidden role="status" tabindex="-1"></p>
       </form>
 
       <aside class="fx-side" aria-labelledby="fx-side-title">
         <p class="fx-side-title" id="fx-side-title">Продуктовая линейка</p>
         <article class="fx-product">
-          <img src="assets/img/lameness-min.jpg" alt="" width="96" height="96" loading="lazy">
+          <img src="assets/img/lameness-min.jpg" alt="" width="80" height="80" loading="lazy">
           <div><h3>Локомоция</h3><p>Мониторинг хромоты в&nbsp;производственном потоке, без остановки животных</p></div>
         </article>
         <article class="fx-product">
-          <img src="assets/img/exterior-min.jpg" alt="" width="96" height="96" loading="lazy">
+          <img src="assets/img/exterior-min.jpg" alt="" width="80" height="80" loading="lazy">
           <div><h3>Фенотип</h3><p>Стационарный комплекс: цифровая оценка экстерьера и&nbsp;фенотипирование</p></div>
         </article>
         <article class="fx-product">
-          <img src="assets/media/exterior-laec.jpg" alt="" width="96" height="96" loading="lazy">
+          <img src="assets/media/exterior-laec.jpg" alt="" width="80" height="80" loading="lazy">
           <div><h3>Фенотип Mobile</h3><p>Мобильный комплекс: единый стандарт оценки для нескольких хозяйств</p></div>
         </article>
         <div class="fx-contact">
@@ -227,43 +284,63 @@
     const form = document.querySelector('[data-fx-form]');
     const done = form.querySelector('[data-fx-done]');
     const herdBox = form.querySelector('[data-fx-herd]');
+    const step = n => form.querySelector(`[data-step="${n}"]`);
     const f = form.elements;
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reveal = n => {
+      const el = step(n);
+      if (!el || !el.hidden) return;
+      el.hidden = false;
+      el.classList.add('is-new');
+      requestAnimationFrame(() => {
+        const r = el.getBoundingClientRect();
+        if (r.top > innerHeight * 0.7) {
+          scrollBy({ top: r.top - innerHeight * 0.25, behavior: reduce ? 'auto' : 'smooth' });
+        }
+      });
+    };
 
-    f.who.addEventListener('change', () => {
-      herdBox.hidden = !f.who.value.startsWith('Молочное');
+    form.addEventListener('change', e => {
+      const name = e.target.name;
+      if (name === 'goal') reveal(2);
+      if (name === 'product') reveal(3);
+      if (name === 'who') {
+        const isFarm = f.who.value.startsWith('Молочное');
+        herdBox.hidden = !isFarm;
+        if (!isFarm) form.querySelectorAll('input[name="herd"]').forEach(i => i.checked = false);
+        reveal(4);
+      }
     });
 
     const mark = (el, errId, ok) => {
       const err = document.getElementById(errId);
-      if (el) el.setAttribute('aria-invalid', String(!ok));
+      el.setAttribute('aria-invalid', String(!ok));
+      if (ok) el.removeAttribute('aria-describedby'); else el.setAttribute('aria-describedby', errId);
       err.hidden = ok;
       return ok;
     };
 
     form.addEventListener('submit', async e => {
       e.preventDefault();
-      const goal = form.querySelector('input[name="goal"]:checked');
       const checks = [
-        mark(null, 'fx-goal-err', !!goal),
-        mark(f.who, 'fx-who-err', !!f.who.value),
-        mark(f.org, 'fx-org-err', f.org.value.trim().length > 1),
         mark(f.name, 'fx-name-err', f.name.value.trim().length > 1),
+        mark(f.org, 'fx-org-err', f.org.value.trim().length > 1),
         mark(f.phone, 'fx-phone-err', f.phone.value.replace(/\D/g, '').length >= 10),
         mark(f.consent, 'fx-consent-err', f.consent.checked)
       ];
       if (checks.includes(false)) {
-        const first = !goal ? form.querySelector('input[name="goal"]') : form.querySelector('[aria-invalid="true"]');
-        first.focus();
+        form.querySelector('[aria-invalid="true"]').focus();
         return;
       }
       const products = [...form.querySelectorAll('input[name="product"]:checked')].map(i => i.value);
+      const herd = form.querySelector('input[name="herd"]:checked');
       const data = {
-        'Интерес': goal.value,
+        'Интерес': f.goal.value || '—',
         'Продукты': products.join(', ') || '—',
-        'Кто': f.who.value,
-        'Поголовье': herdBox.hidden ? '—' : (f.herd.value || 'не указано'),
-        'Организация и регион': f.org.value.trim(),
+        'Кто': f.who.value || '—',
+        'Поголовье': herd ? herd.value : '—',
         'Имя и должность': f.name.value.trim(),
+        'Организация и регион': f.org.value.trim(),
         'Телефон': f.phone.value.trim(),
         'E-mail': f.email.value.trim() || '—',
         'Комментарий': f.message.value.trim() || '—',
@@ -279,13 +356,14 @@
           done.hidden = false; done.focus();
           return;
         }
-        form.querySelectorAll('fieldset, .field, .consent, .fx-step, button[type="submit"]').forEach(el => el.hidden = true);
+        form.querySelectorAll('.fx-stepbox').forEach(el => el.hidden = true);
+        done.textContent = 'Спасибо! Заявка у команды АгроБиоСенс — свяжемся в течение двух рабочих дней.';
         done.hidden = false; done.focus();
         return;
       }
 
       const body = Object.entries(data).map(([k, v]) => `${k}: ${v}`).join('\n');
-      const subject = `Заявка с форума «Молоко России»: ${goal.value} — ${f.org.value.trim()}`;
+      const subject = `Заявка с форума «Молоко России»: ${data['Интерес']} — ${data['Организация и регион']}`;
       window.location.href = `mailto:${MAILTO}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       done.textContent = 'Открыли письмо с заявкой в почтовой программе — осталось нажать «Отправить». Если письмо не открылось, позвоните: +7 919 019‑36‑80.';
       done.hidden = false;
