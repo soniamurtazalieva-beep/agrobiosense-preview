@@ -42,6 +42,44 @@
     .fx-title { margin-top: 16px; font: 700 clamp(34px, 5.4vw, 60px)/1.05 var(--f); letter-spacing: -.03em; max-width: 16ch; text-wrap: balance; }
     .fx-lead { margin-top: 12px; color: var(--fx-muted); font-size: clamp(16px, 1.3vw, 18px); line-height: 1.55; max-width: 52ch; }
 
+    .fx-title { max-width: 18ch; font-size: clamp(29px, 4.6vw, 56px); }
+    .fx-trust { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; }
+    .fx-trust li { padding: 5px 10px; border: 1.5px solid var(--fx-line-strong); border-radius: 999px; font-size: 12px; font-weight: 500; line-height: 1.3; }
+
+    
+    .fx-calc-wrap { padding-bottom: clamp(32px, 4vw, 48px); }
+    .fx-calc { display: grid; gap: 24px; padding: 24px 20px; border-radius: 24px; background: var(--fx-ink); color: #fff; }
+    @media (min-width: 640px) { .fx-calc { padding: 32px; } }
+    @media (min-width: 900px) { .fx-calc { grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; } }
+    .fx-calc-in { display: grid; gap: 12px; align-content: start; }
+    .fx-calc-kicker { font: 600 13px/1.3 var(--f); letter-spacing: .08em; text-transform: uppercase; color: var(--tag); }
+    .fx-calc-title { font: 700 clamp(22px, 2.4vw, 30px)/1.15 var(--f); letter-spacing: -.02em; max-width: 20ch; }
+    .fx-calc-label { margin-top: 6px; font-size: 14px; color: #CFCFCB; }
+    .fx-calc-row { display: grid; grid-template-columns: 52px 1fr 52px; gap: 8px; max-width: 340px; }
+    .fx-calc-row input { min-width: 0; height: 56px; padding: 0 12px; border: 1.5px solid rgba(255, 255, 255, .3); border-radius: 14px; background: transparent; color: #fff; font: 700 24px/1 var(--f); text-align: center; -moz-appearance: textfield; }
+    .fx-calc-row input::-webkit-outer-spin-button, .fx-calc-row input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    .fx-calc-row input:focus { outline: none; border-color: var(--tag); }
+    .fx-step-btn { height: 56px; border: 1.5px solid rgba(255, 255, 255, .3); border-radius: 14px; background: transparent; color: #fff; font-size: 24px; cursor: pointer; }
+    .fx-step-btn:hover { border-color: #fff; }
+    .fx-calc-presets { display: flex; flex-wrap: wrap; gap: 8px; }
+    .fx-calc-presets button { padding: 8px 14px; border: 1.5px solid rgba(255, 255, 255, .3); border-radius: 999px; background: transparent; color: #fff; font: 500 14px/1 var(--f); cursor: pointer; }
+    .fx-calc-presets button:hover { border-color: #fff; }
+    .fx-calc :focus-visible { outline-color: var(--tag); }
+    .fx-calc-out { display: grid; gap: 16px; }
+    .fx-calc-res { padding-bottom: 16px; border-bottom: 1px solid rgba(255, 255, 255, .16); }
+    .fx-calc-num { font: 700 clamp(32px, 4vw, 44px)/1.05 var(--f); letter-spacing: -.02em; }
+    .fx-calc-num-tag { color: var(--tag); }
+    .fx-calc-cap { margin-top: 6px; font-size: 14px; line-height: 1.45; color: #CFCFCB; }
+    .fx-calc-cta { width: 100%; }
+    @media (min-width: 640px) { .fx-calc-cta { width: auto; justify-self: start; } }
+    .fx-calc-note { font-size: 12px; line-height: 1.45; color: #9E9E9A; }
+
+    .fx-form-head { display: grid; gap: 6px; }
+    .fx-form-title { font: 700 clamp(26px, 2.6vw, 32px)/1.1 var(--f); letter-spacing: -.02em; }
+    .fx-form-sub { font-size: 15px; line-height: 1.5; color: var(--fx-muted); }
+    .fx-options.fx-options-4 { grid-template-columns: 1fr 1fr; }
+    @media (min-width: 640px) { .fx-options.fx-options-4 { grid-template-columns: repeat(4, 1fr); } }
+
     .fx-grid { display: grid; gap: 40px; padding-bottom: clamp(40px, 7vw, 96px); }
     @media (min-width: 1000px) { .fx-grid { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); align-items: start; gap: 48px; } }
 
@@ -51,7 +89,7 @@
       .fx-form { padding: 32px; border: 1.5px solid var(--fx-ink); border-radius: 24px; }
     }
     .fx-stepbox { display: grid; gap: 14px; min-width: 0; }
-    .fx-stepbox + .fx-stepbox { padding-top: var(--fx-step-gap); border-top: 1px solid var(--fx-line); }
+    .fx-stepbox + .fx-stepbox, .fx-form-head + input + .fx-stepbox { padding-top: var(--fx-step-gap); border-top: 1px solid var(--fx-line); }
     .fx-stepbox[hidden] { display: none; }
     .fx-stepbox.is-new { animation: fx-in .35s ease-out both; }
     @keyframes fx-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
@@ -137,7 +175,7 @@
       .fx-header .logo { font-size: 12px; letter-spacing: .12em; }
       .fx-header .btn { padding: 0 14px; font-size: 13px; }
       .fx-kicker { font-size: 12px; padding: 6px 12px; }
-      .fx-title { font-size: 30px; }
+      .fx-title { font-size: 27px; }
       .fx-q { font-size: 17px; gap: 10px; }
       .fx-opt span { padding-left: 42px; font-size: 14px; }
       .fx-opt span::before { left: 12px; }
@@ -161,12 +199,56 @@
   <main id="main">
     <section class="wrap fx-intro">
       <p class="fx-kicker">Форум «Молоко России» · 24–26&nbsp;ноября</p>
-      <h1 class="fx-title">Обсудим сотрудничество</h1>
-      <p class="fx-lead">Цифровые технологии продуктивного долголетия молочного стада. Четыре коротких вопроса&nbsp;— и&nbsp;мы свяжемся с&nbsp;вами в&nbsp;течение двух рабочих дней.</p>
+      <h1 class="fx-title">Больше продуктивных лактаций. Меньше предотвратимых потерь.</h1>
+      <p class="fx-lead">Цифровая оценка экстерьера и&nbsp;раннее выявление проблем с&nbsp;конечностями у&nbsp;коров. Разработка РГАУ‑МСХА имени К.А.&nbsp;Тимирязева.</p>
+      <ul class="fx-trust" aria-label="О проекте">
+        <li>«Приоритет‑2030»</li>
+        <li>Испытания в&nbsp;«АГРОЭКО»</li>
+        <li>Победа на&nbsp;«Гравитации‑2026»</li>
+        <li>14&nbsp;000 голов в&nbsp;базе</li>
+      </ul>
+    </section>
+
+    <section class="wrap fx-calc-wrap" aria-labelledby="fx-calc-title">
+      <div class="fx-calc">
+        <div class="fx-calc-in">
+          <p class="fx-calc-kicker">Расчёт для вашего стада</p>
+          <h2 class="fx-calc-title" id="fx-calc-title">Сколько стоит хромота вашему хозяйству</h2>
+          <label class="fx-calc-label" for="fx-cows">Дойных коров в&nbsp;стаде</label>
+          <div class="fx-calc-row">
+            <button class="fx-step-btn" type="button" data-fx-cows-step="-100" aria-label="Меньше на 100">−</button>
+            <input id="fx-cows" type="number" inputmode="numeric" min="50" max="100000" step="50" value="1000" data-fx-cows>
+            <button class="fx-step-btn" type="button" data-fx-cows-step="100" aria-label="Больше на 100">+</button>
+          </div>
+          <div class="fx-calc-presets" aria-label="Быстрый выбор">
+            <button type="button" data-fx-cows-set="500">500</button>
+            <button type="button" data-fx-cows-set="1000">1&nbsp;000</button>
+            <button type="button" data-fx-cows-set="3000">3&nbsp;000</button>
+            <button type="button" data-fx-cows-set="5000">5&nbsp;000</button>
+          </div>
+        </div>
+        <div class="fx-calc-out" aria-live="polite">
+          <div class="fx-calc-res">
+            <p class="fx-calc-num" data-fx-loss>≈ 6,6 млн&nbsp;₽</p>
+            <p class="fx-calc-cap">в&nbsp;год&nbsp;— расчётные потери стоимости молока из‑за хромоты</p>
+          </div>
+          <div class="fx-calc-res">
+            <p class="fx-calc-num fx-calc-num-tag" data-fx-save>до 1,3 млн&nbsp;₽</p>
+            <p class="fx-calc-cap">в&nbsp;год можно сохранить, если сократить хромоту на&nbsp;20%</p>
+          </div>
+          <button class="btn btn-tag fx-calc-cta" type="button" data-fx-calc-go>Получить точный расчёт</button>
+          <p class="fx-calc-note">Оценка по&nbsp;модели проекта: 6,6&nbsp;млн&nbsp;₽ потерь в&nbsp;год на&nbsp;1&nbsp;000 коров. Точный расчёт&nbsp;— по&nbsp;данным вашего хозяйства.</p>
+        </div>
+      </div>
     </section>
 
     <div class="wrap fx-grid">
       <form class="fx-form" id="form" data-fx-form novalidate>
+        <div class="fx-form-head">
+          <h2 class="fx-form-title">Заявка</h2>
+          <p class="fx-form-sub">Четыре коротких вопроса&nbsp;— свяжемся в&nbsp;течение двух рабочих дней.</p>
+        </div>
+        <input type="hidden" name="calc" value="">
 
         <div class="fx-stepbox" data-step="1" role="group" aria-labelledby="fx-q1">
           <p class="fx-q" id="fx-q1"><span class="fx-num" aria-hidden="true">1</span><span>Что вам интересно?</span></p>
@@ -227,9 +309,8 @@
               <p class="fx-err" id="fx-name-err" hidden>Напишите, как к вам обращаться</p>
             </div>
             <div class="fx-field">
-              <label for="fx-org">Организация и регион <span class="req" aria-hidden="true">*</span></label>
-              <input id="fx-org" name="org" type="text" autocomplete="organization" placeholder="Название, регион" required>
-              <p class="fx-err" id="fx-org-err" hidden>Укажите организацию</p>
+              <label for="fx-org">Организация и регион <span class="fx-hint">необязательно</span></label>
+              <input id="fx-org" name="org" type="text" autocomplete="organization" placeholder="Название, регион">
             </div>
             <div class="fx-field">
               <label for="fx-phone">Телефон <span class="req" aria-hidden="true">*</span></label>
@@ -239,6 +320,15 @@
             <div class="fx-field">
               <label for="fx-email">E-mail <span class="fx-hint">необязательно</span></label>
               <input id="fx-email" name="email" type="email" inputmode="email" autocomplete="email">
+            </div>
+            <div class="fx-sub fx-field-wide">
+              <p class="fx-sub-q" id="fx-channel-q">Как удобнее связаться? <span class="fx-hint">необязательно</span></p>
+              <div class="fx-options fx-options-4" role="radiogroup" aria-labelledby="fx-channel-q">
+                <label class="fx-opt"><input type="radio" name="channel" value="Звонок"><span>Звонок</span></label>
+                <label class="fx-opt"><input type="radio" name="channel" value="Telegram"><span>Telegram</span></label>
+                <label class="fx-opt"><input type="radio" name="channel" value="WhatsApp"><span>WhatsApp</span></label>
+                <label class="fx-opt"><input type="radio" name="channel" value="MAX"><span>MAX</span></label>
+              </div>
             </div>
             <div class="fx-field fx-field-wide">
               <label for="fx-msg">Комментарий <span class="fx-hint">необязательно</span></label>
@@ -297,11 +387,13 @@
     const step = n => form.querySelector(`[data-step="${n}"]`);
     const f = form.elements;
     const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let quiet = false;
     const reveal = n => {
       const el = step(n);
       if (!el || !el.hidden) return;
       el.hidden = false;
       el.classList.add('is-new');
+      if (quiet) return;
       requestAnimationFrame(() => {
         const r = el.getBoundingClientRect();
         if (r.top > innerHeight * 0.7) {
@@ -326,6 +418,46 @@
         reveal(4);
       }
     });
+    const LOSS_PER_COW = 6600;
+    const SAVE_SHARE = 0.2;
+    const cows = document.querySelector('[data-fx-cows]');
+    const lossEl = document.querySelector('[data-fx-loss]');
+    const saveEl = document.querySelector('[data-fx-save]');
+    const money = v => v >= 1e6
+      ? (v / 1e6).toFixed(1).replace('.', ',').replace(',0', '') + '\u00a0млн\u00a0₽'
+      : Math.round(v / 1000).toLocaleString('ru-RU') + '\u00a0тыс.\u00a0₽';
+    const herdCount = () => Math.min(100000, Math.max(0, Math.round(Number(cows.value) || 0)));
+    const calc = () => {
+      const n = herdCount();
+      lossEl.textContent = n ? '≈ ' + money(n * LOSS_PER_COW) : '—';
+      saveEl.textContent = n ? 'до ' + money(n * LOSS_PER_COW * SAVE_SHARE) : '—';
+    };
+    cows.addEventListener('input', calc);
+    document.querySelectorAll('[data-fx-cows-step]').forEach(b => b.addEventListener('click', () => {
+      cows.value = Math.max(50, herdCount() + Number(b.dataset.fxCowsStep)); calc();
+    }));
+    document.querySelectorAll('[data-fx-cows-set]').forEach(b => b.addEventListener('click', () => {
+      cows.value = b.dataset.fxCowsSet; calc();
+    }));
+    calc();
+
+    document.querySelector('[data-fx-calc-go]').addEventListener('click', () => {
+      const n = herdCount();
+      f.calc.value = n ? `${n} коров: потери ${lossEl.textContent}, сохранить ${saveEl.textContent}`.replace(/\u00a0/g, ' ') : '';
+      const impl = form.querySelector('input[name="goal"][value^="Внедрить"]');
+      if (!impl.checked) {
+        impl.checked = true;
+        quiet = true;
+        impl.dispatchEvent(new Event('change', { bubbles: true }));
+        quiet = false;
+      }
+      if (n) {
+        const cat = n <= 500 ? 'до 500' : n <= 1000 ? '500–1 000' : n <= 5000 ? '1 000–5 000' : 'свыше 5 000';
+        const r = form.querySelector(`input[name="herd"][value="${cat}"]`);
+        if (r) r.checked = true;
+      }
+      form.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    });
 
     const mark = (el, errId, ok) => {
       const err = document.getElementById(errId);
@@ -339,7 +471,6 @@
       e.preventDefault();
       const checks = [
         mark(f.name, 'fx-name-err', f.name.value.trim().length > 1),
-        mark(f.org, 'fx-org-err', f.org.value.trim().length > 1),
         mark(f.phone, 'fx-phone-err', f.phone.value.replace(/\D/g, '').length >= 10),
         mark(f.consent, 'fx-consent-err', f.consent.checked)
       ];
@@ -356,9 +487,11 @@
         'Кто': f.who.value || '—',
         'Поголовье': herd ? herd.value : '—',
         'Сроки внедрения': when ? when.value : '—',
+        'Расчёт на сайте': f.calc.value || '—',
         'Имя и должность': f.name.value.trim(),
-        'Организация и регион': f.org.value.trim(),
+        'Организация и регион': f.org.value.trim() || '—',
         'Телефон': f.phone.value.trim(),
+        'Удобный способ связи': (form.querySelector('input[name="channel"]:checked') || {}).value || '—',
         'E-mail': f.email.value.trim() || '—',
         'Комментарий': f.message.value.trim() || '—',
         'Источник': 'QR, форум «Молоко России 2026»'
@@ -380,7 +513,7 @@
       }
 
       const body = Object.entries(data).map(([k, v]) => `${k}: ${v}`).join('\n');
-      const subject = `Заявка с форума «Молоко России»: ${data['Интерес']} — ${data['Организация и регион']}`;
+      const subject = `Заявка с форума «Молоко России»: ${data['Интерес']} — ${data['Организация и регион'] !== '—' ? data['Организация и регион'] : data['Имя и должность']}`;
       window.location.href = `mailto:${MAILTO}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       done.textContent = 'Открыли письмо с заявкой в почтовой программе — осталось нажать «Отправить». Если письмо не открылось, позвоните: +7 919 019‑36‑80.';
       done.hidden = false;
