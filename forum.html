@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>АгроБиоСенс — обсудить сотрудничество</title>
-  <meta name="description" content="Заявка на сотрудничество с командой АгроБиоСенс: пилотное внедрение, партнёрство, коммерческое предложение. РГАУ-МСХА имени К.А. Тимирязева.">
+  <meta name="description" content="Заявка на сотрудничество с командой АгроБиоСенс: внедрение на хозяйстве, партнёрство. РГАУ-МСХА имени К.А. Тимирязева.">
   <meta name="theme-color" content="#FFFFFF">
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" href="assets/img/favicon-192.png" type="image/png" sizes="192x192">
@@ -68,7 +68,7 @@
     .fx-opt { position: relative; display: block; }
     .fx-opt input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
     .fx-opt span {
-      display: flex; align-items: center; min-height: 52px; height: 100%;
+      display: flex; flex-direction: column; justify-content: center; align-items: flex-start; min-height: 52px; height: 100%;
       padding: 12px 14px 12px 46px; position: relative;
       border: 1.5px solid var(--fx-line-strong); border-radius: 14px;
       font-size: 15px; font-weight: 500; line-height: 1.3;
@@ -79,6 +79,8 @@
       border: 1.5px solid var(--fx-ink); border-radius: 50%; box-sizing: border-box; background: #fff;
     }
     .fx-opt input[type="checkbox"] + span::before { border-radius: 6px; }
+    .fx-opt small { display: block; margin-top: 2px; font-size: 13px; font-weight: 400; line-height: 1.35; color: var(--fx-muted); }
+    .fx-opt input:checked + span small { color: var(--tag-ink); }
     .fx-opt input:hover + span { border-color: var(--fx-ink); }
     .fx-opt input:checked + span { background: var(--tag); border-color: var(--tag); }
     .fx-opt input[type="radio"]:checked + span::before { background: var(--fx-ink); box-shadow: inset 0 0 0 4px #fff; }
@@ -169,10 +171,8 @@
         <div class="fx-stepbox" data-step="1" role="group" aria-labelledby="fx-q1">
           <p class="fx-q" id="fx-q1"><span class="fx-num" aria-hidden="true">1</span><span>Что вам интересно?</span></p>
           <div class="fx-options">
-            <label class="fx-opt"><input type="radio" name="goal" value="Пилот на моём хозяйстве"><span>Пилот на&nbsp;моём хозяйстве</span></label>
-            <label class="fx-opt"><input type="radio" name="goal" value="Стать партнёром"><span>Стать партнёром</span></label>
-            <label class="fx-opt"><input type="radio" name="goal" value="Купить решение — получить КП"><span>Купить&nbsp;— получить&nbsp;КП</span></label>
-            <label class="fx-opt"><input type="radio" name="goal" value="Дистрибуция и сервисное партнёрство"><span>Стать дистрибьютором</span></label>
+            <label class="fx-opt"><input type="radio" name="goal" value="Внедрить на своём хозяйстве"><span>Внедрить на&nbsp;своём хозяйстве<small>пилот, затем оснащение</small></span></label>
+            <label class="fx-opt"><input type="radio" name="goal" value="Стать партнёром"><span>Стать партнёром<small>совместная разработка, испытания, сервис</small></span></label>
             <label class="fx-opt"><input type="radio" name="goal" value="Другое"><span>Другое</span></label>
           </div>
         </div>
@@ -206,6 +206,14 @@
               <label class="fx-opt"><input type="radio" name="herd" value="500–1 000"><span>500–1&nbsp;000 голов</span></label>
               <label class="fx-opt"><input type="radio" name="herd" value="1 000–5 000"><span>1&nbsp;000–5&nbsp;000 голов</span></label>
               <label class="fx-opt"><input type="radio" name="herd" value="свыше 5 000"><span>свыше 5&nbsp;000 голов</span></label>
+            </div>
+          </div>
+          <div class="fx-sub" data-fx-when hidden>
+            <p class="fx-sub-q" id="fx-when-q">Когда планируете внедрение? <span class="fx-hint">необязательно</span></p>
+            <div class="fx-options" role="radiogroup" aria-labelledby="fx-when-q">
+              <label class="fx-opt"><input type="radio" name="when" value="в ближайшие полгода"><span>В&nbsp;ближайшие полгода</span></label>
+              <label class="fx-opt"><input type="radio" name="when" value="в течение года"><span>В&nbsp;течение года</span></label>
+              <label class="fx-opt"><input type="radio" name="when" value="пока изучаю"><span>Пока изучаю</span></label>
             </div>
           </div>
         </div>
@@ -284,6 +292,8 @@
     const form = document.querySelector('[data-fx-form]');
     const done = form.querySelector('[data-fx-done]');
     const herdBox = form.querySelector('[data-fx-herd]');
+    const whenBox = form.querySelector('[data-fx-when]');
+    const clear = n => form.querySelectorAll(`input[name="${n}"]`).forEach(i => i.checked = false);
     const step = n => form.querySelector(`[data-step="${n}"]`);
     const f = form.elements;
     const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -302,12 +312,17 @@
 
     form.addEventListener('change', e => {
       const name = e.target.name;
-      if (name === 'goal') reveal(2);
+      if (name === 'goal') {
+        const isImpl = f.goal.value.startsWith('Внедрить');
+        whenBox.hidden = !isImpl;
+        if (!isImpl) clear('when');
+        reveal(2);
+      }
       if (name === 'product') reveal(3);
       if (name === 'who') {
         const isFarm = f.who.value.startsWith('Молочное');
         herdBox.hidden = !isFarm;
-        if (!isFarm) form.querySelectorAll('input[name="herd"]').forEach(i => i.checked = false);
+        if (!isFarm) clear('herd');
         reveal(4);
       }
     });
@@ -334,11 +349,13 @@
       }
       const products = [...form.querySelectorAll('input[name="product"]:checked')].map(i => i.value);
       const herd = form.querySelector('input[name="herd"]:checked');
+      const when = form.querySelector('input[name="when"]:checked');
       const data = {
         'Интерес': f.goal.value || '—',
         'Продукты': products.join(', ') || '—',
         'Кто': f.who.value || '—',
         'Поголовье': herd ? herd.value : '—',
+        'Сроки внедрения': when ? when.value : '—',
         'Имя и должность': f.name.value.trim(),
         'Организация и регион': f.org.value.trim(),
         'Телефон': f.phone.value.trim(),
